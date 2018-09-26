@@ -58,7 +58,7 @@ class( quote( if(8<3) pi ) ) # "if"
 round(2.3875,digits=2)
 ```
 ```{r}
-xlibrary(readr)
+library(readr)
 student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
 library(dplyr)
 library(magrittr)

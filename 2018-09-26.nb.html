@@ -309,12 +309,26 @@ class( quote(x &lt;- 1) )       # &quot;&lt;-&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueGxpYnJhcnkocmVhZHIpXG5gYGAifQ== -->
-<pre class="r"><code>xlibrary(readr)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbnN0dWRlbnQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhL3N0dWRlbnQuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>library(readr)
+student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4geGxpYnJhcnkocmVhZHIpIDog5rKS5pyJ6YCZ5YCL5Ye95pW4IFwieGxpYnJhcnlcIlxuIn0= -->
-<pre><code>Error in xlibrary(readr) : 沒有這個函數 &quot;xlibrary&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiYGN1cmxgIHBhY2thZ2Ugbm90IGluc3RhbGxlZCwgZmFsbGluZyBiYWNrIHRvIHVzaW5nIGB1cmwoKWBcblBhcnNlZCB3aXRoIGNvbHVtbiBzcGVjaWZpY2F0aW9uOlxuY29scyhcbiAg5YWl5a245bm0ID0gY29sX2NoYXJhY3RlcigpLFxuICDlh7rnlJ/lnLAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIOaAp+WIpSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg6Lqr6auYID0gY29sX2RvdWJsZSgpXG4pXG4ifQ== -->
+<pre><code>`curl` package not installed, falling back to using `url()`
+Parsed with column specification:
+cols(
+  入學年 = col_character(),
+  出生地 = col_character(),
+  性別 = col_character(),
+  身高 = col_double()
+)</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkobWFncml0dHIpXG5zdHVkZW50ICU8PiUgbXV0YXRlKFxuICDouqvpq5jntJrot509Y3V0KOi6q+mrmCxjKDAsMTUwLDE1NSwxNjAsMTY1LDE3MCwxNzUsMTgwLDE4NSwyMDApKSlcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)
+library(magrittr)
+student %&lt;&gt;% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
@@ -330,10 +344,6 @@ class( quote(x &lt;- 1) )       # &quot;&lt;-&quot;</code></pre>
        levels=c(&quot;(0,150]&quot;,&quot;(150,155]&quot;, &quot;(155,160]&quot;, &quot;(160,165]&quot; ,&quot;(165,170]&quot;, &quot;(170,175]&quot; ,&quot;(175,180]&quot; ,&quot;(180,185]&quot;, &quot;(185,200]&quot;),
        ordered=TRUE) -&gt; student$身高級距</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZmFjdG9yKHN0dWRlbnQk6Lqr6auY57Sa6LedLCBsZXZlbHMgPSBjKFwiKDAsMTUwXVwiLCBcIigxNTAsMTU1XVwiLCAgOiBcbiAg5om+5LiN5Yiw54mp5Lu2ICdzdHVkZW50J1xuIn0= -->
-<pre><code>Error in factor(student$身高級距, levels = c(&quot;(0,150]&quot;, &quot;(150,155]&quot;,  : 
-  找不到物件 'student'</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -345,28 +355,25 @@ class( quote(x &lt;- 1) )       # &quot;&lt;-&quot;</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkobHVicmlkYXRlKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkobHVicmlkYXRlKVxuYSA8LSB5bWQoXCIyMDE3LTAxLTMxXCIpIFxuYiA8LSB5bWRfaG1zKFwiMjAxNy0wMS0zMSAyMDoxMTo1OVwiKVxuYGBgIn0= -->
 <pre class="r"><code>library(dplyr)
-library(lubridate)</code></pre>
+library(lubridate)
+a &lt;- ymd(&quot;2017-01-31&quot;) 
+b &lt;- ymd_hms(&quot;2017-01-31 20:11:59&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGlicmFyeShsdWJyaWRhdGUpIDogdGhlcmUgaXMgbm8gcGFja2FnZSBjYWxsZWQg4oCYbHVicmlkYXRl4oCZXG4ifQ== -->
-<pre><code>Error in library(lubridate) : there is no package called ‘lubridate’</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSB5bWQoXCIyMDE3LzAxLzMxXCIpIFxuYGBgIn0= -->
-<pre class="r"><code>a &lt;- ymd(&quot;2017/01/31&quot;) </code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSB5bWQoXCIyMDE3LzAxLzMxXCIpIFxuYiA8LSB5bWRfaG1zKFwiMjAxNy0wMS0zMSAyOjUzOjAwcG1cIilcbmBgYCJ9 -->
+<pre class="r"><code>a &lt;- ymd(&quot;2017/01/31&quot;) 
+b &lt;- ymd_hms(&quot;2017-01-31 2:53:00pm&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4geW1kKFwiMjAxNy8wMS8zMVwiKSA6IOaykuaciemAmeWAi+WHveaVuCBcInltZFwiXG4ifQ== -->
-<pre><code>Error in ymd(&quot;2017/01/31&quot;) : 沒有這個函數 &quot;ymd&quot;</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0wOS0yNiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KYTwtNQphMjwtNUwKYGBgCgoKCmBgYHtyfQphVmVjdG9yPC1jKDUsNiw3KQphMlZlY3RvcjwtYyg1TCw2TCw3TCkKYGBgCgpgYGB7cn0KbnVtMTwtMQpudW0yPC0xMDAKbnVtMStudW0yCmBgYApgYGB7cn0KbnVtMTwtMS41NjgKbnVtMjwtMi4xMjEKcm91bmQobnVtMSxkaWdpdHMgPSAyKS0+cm91bmROdW0xCmBgYAoKYGBge3J9CmI8LSLkvaDlpb0iCmJWZWN0b3I8LWMoIuS9oOWlvSIsIkhvdyBhcmUgeW91PyIpCmBgYApgYGB7cn0KYjM8LSci5L2g5aW9IicKYjQ8LSci5L2g5aW9IicKYGBgCgpgYGB7cn0KeCA8LSAxMApjbGFzcyh4KSAjICJudW1lcmljIgpvbGRDbGFzcyh4KSAjIE5VTEwKaW5oZXJpdHMoeCwgImEiKSAjRkFMU0UKY2xhc3MoeCkgPC0gYygiYSIsICJiIikKaW5oZXJpdHMoeCwiYSIpICNUUlVFCmluaGVyaXRzKHgsICJhIiwgVFJVRSkgIyAxCmluaGVyaXRzKHgsIGMoImEiLCAiYiIsICJjIiksIFRSVUUpICMgMSAyIDAKCmNsYXNzKCBxdW90ZShwaSkgKSAgICAgICAgICAgIyAibmFtZSIKIyMgcmVndWxhciBjYWxscwpjbGFzcyggcXVvdGUoc2luKHBpKngpKSApICAgICMgImNsYXNzIgojIyBzcGVjaWFsIGNhbGxzCmNsYXNzKCBxdW90ZSh4IDwtIDEpICkgICAgICAgIyAiPC0iCmNsYXNzKCBxdW90ZSgoMSA8IDIpKSApICAgICAgIyAiKCIKY2xhc3MoIHF1b3RlKCBpZig4PDMpIHBpICkgKSAjICJpZiIKCmBgYAoKYGBge3J9CnJvdW5kKDIuMzg3NSxkaWdpdHM9MikKYGBgCmBgYHtyfQp4bGlicmFyeShyZWFkcikKc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobWFncml0dHIpCnN0dWRlbnQgJTw+JSBtdXRhdGUoCiAg6Lqr6auY57Sa6LedPWN1dCjouqvpq5gsYygwLDE1MCwxNTUsMTYwLDE2NSwxNzAsMTc1LDE4MCwxODUsMjAwKSkpCmBgYApgYGB7cn0Kc3R1ZGVudCTlh7rnlJ/lnLAKICAKYGBgCgpgYGB7cn0KYXMuZmFjdG9yKHN0dWRlbnQk5Ye655Sf5ZywKSAtPiBzdHVkZW50JOWHuueUn+WcsApgYGAKCmBgYHtyfQpmYWN0b3Ioc3R1ZGVudCTouqvpq5jntJrot50sCiAgICAgICBsZXZlbHM9YygiKDAsMTUwXSIsIigxNTAsMTU1XSIsICIoMTU1LDE2MF0iLCAiKDE2MCwxNjVdIiAsIigxNjUsMTcwXSIsICIoMTcwLDE3NV0iICwiKDE3NSwxODBdIiAsIigxODAsMTg1XSIsICIoMTg1LDIwMF0iKSwKICAgICAgIG9yZGVyZWQ9VFJVRSkgLT4gc3R1ZGVudCTouqvpq5jntJrot50KYGBgCgpgYGB7cn0KYTwtIjIwMTctMDEtMzEiCmBgYAoKYGBge3J9CmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobHVicmlkYXRlKQphIDwtIHltZCgiMjAxNy0wMS0zMSIpIApiIDwtIHltZF9obXMoIjIwMTctMDEtMzEgMjA6MTE6NTkiKQpgYGAKCmBgYHtyfQphIDwtIHltZCgiMjAxNy8wMS8zMSIpIApiIDwtIHltZF9obXMoIjIwMTctMDEtMzEgMjo1MzowMHBtIikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0wOS0yNiIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KYTwtNQphMjwtNUwKYGBgCgoKCmBgYHtyfQphVmVjdG9yPC1jKDUsNiw3KQphMlZlY3RvcjwtYyg1TCw2TCw3TCkKYGBgCgpgYGB7cn0KbnVtMTwtMQpudW0yPC0xMDAKbnVtMStudW0yCmBgYApgYGB7cn0KbnVtMTwtMS41NjgKbnVtMjwtMi4xMjEKcm91bmQobnVtMSxkaWdpdHMgPSAyKS0+cm91bmROdW0xCmBgYAoKYGBge3J9CmI8LSLkvaDlpb0iCmJWZWN0b3I8LWMoIuS9oOWlvSIsIkhvdyBhcmUgeW91PyIpCmBgYApgYGB7cn0KYjM8LSci5L2g5aW9IicKYjQ8LSci5L2g5aW9IicKYGBgCgpgYGB7cn0KeCA8LSAxMApjbGFzcyh4KSAjICJudW1lcmljIgpvbGRDbGFzcyh4KSAjIE5VTEwKaW5oZXJpdHMoeCwgImEiKSAjRkFMU0UKY2xhc3MoeCkgPC0gYygiYSIsICJiIikKaW5oZXJpdHMoeCwiYSIpICNUUlVFCmluaGVyaXRzKHgsICJhIiwgVFJVRSkgIyAxCmluaGVyaXRzKHgsIGMoImEiLCAiYiIsICJjIiksIFRSVUUpICMgMSAyIDAKCmNsYXNzKCBxdW90ZShwaSkgKSAgICAgICAgICAgIyAibmFtZSIKIyMgcmVndWxhciBjYWxscwpjbGFzcyggcXVvdGUoc2luKHBpKngpKSApICAgICMgImNsYXNzIgojIyBzcGVjaWFsIGNhbGxzCmNsYXNzKCBxdW90ZSh4IDwtIDEpICkgICAgICAgIyAiPC0iCmNsYXNzKCBxdW90ZSgoMSA8IDIpKSApICAgICAgIyAiKCIKY2xhc3MoIHF1b3RlKCBpZig4PDMpIHBpICkgKSAjICJpZiIKCmBgYAoKYGBge3J9CnJvdW5kKDIuMzg3NSxkaWdpdHM9MikKYGBgCmBgYHtyfQpsaWJyYXJ5KHJlYWRyKQpzdHVkZW50IDwtIHJlYWRfY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhL3N0dWRlbnQuY3N2IikKbGlicmFyeShkcGx5cikKbGlicmFyeShtYWdyaXR0cikKc3R1ZGVudCAlPD4lIG11dGF0ZSgKICDouqvpq5jntJrot509Y3V0KOi6q+mrmCxjKDAsMTUwLDE1NSwxNjAsMTY1LDE3MCwxNzUsMTgwLDE4NSwyMDApKSkKYGBgCmBgYHtyfQpzdHVkZW50JOWHuueUn+WcsAogIApgYGAKCmBgYHtyfQphcy5mYWN0b3Ioc3R1ZGVudCTlh7rnlJ/lnLApIC0+IHN0dWRlbnQk5Ye655Sf5ZywCmBgYAoKYGBge3J9CmZhY3RvcihzdHVkZW50JOi6q+mrmOe0mui3nSwKICAgICAgIGxldmVscz1jKCIoMCwxNTBdIiwiKDE1MCwxNTVdIiwgIigxNTUsMTYwXSIsICIoMTYwLDE2NV0iICwiKDE2NSwxNzBdIiwgIigxNzAsMTc1XSIgLCIoMTc1LDE4MF0iICwiKDE4MCwxODVdIiwgIigxODUsMjAwXSIpLAogICAgICAgb3JkZXJlZD1UUlVFKSAtPiBzdHVkZW50JOi6q+mrmOe0mui3nQpgYGAKCmBgYHtyfQphPC0iMjAxNy0wMS0zMSIKYGBgCgpgYGB7cn0KbGlicmFyeShkcGx5cikKbGlicmFyeShsdWJyaWRhdGUpCmEgPC0geW1kKCIyMDE3LTAxLTMxIikgCmIgPC0geW1kX2htcygiMjAxNy0wMS0zMSAyMDoxMTo1OSIpCmBgYAoKYGBge3J9CmEgPC0geW1kKCIyMDE3LzAxLzMxIikgCmIgPC0geW1kX2htcygiMjAxNy0wMS0zMSAyOjUzOjAwcG0iKQpgYGAKCg==</div>
 
 
 
