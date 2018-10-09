@@ -2,3 +2,21 @@
 title: "2018-10-08"
 output: html_notebook
 ---
+```{r}
+str(2L)
+a<-c(2L, 'a', 3.0, 4)
+str(a)
+```
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+head(student,n = 10L)
+```
+
+```{r}
+gender <- c("男性", "男性", "女性", "男性", "女性", "男性")
+factor(gender)
+
+```
+
+

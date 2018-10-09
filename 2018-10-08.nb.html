@@ -177,8 +177,63 @@ $(document).ready(function () {
 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyKDJMKVxuYGBgIn0= -->
+<pre class="r"><code>str(2L)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIGludCAyXG4ifQ== -->
+<pre><code> int 2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtYygyTCwgJ2EnLCAzLjAsIDQpXG5zdHIoYSlcbmBgYCJ9 -->
+<pre class="r"><code>a&lt;-c(2L, 'a', 3.0, 4)
+str(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIGNociBbMTo0XSBcIjJcIiBcImFcIiBcIjNcIiBcIjRcIlxuIn0= -->
+<pre><code> chr [1:4] &quot;2&quot; &quot;a&quot; &quot;3&quot; &quot;4&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbnN0dWRlbnQgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vdHBlbWFydGluL2NvdXJzZS0xMDctMS1wcm9ncmFtbWluZy1mb3ItZGF0YS1zY2llbmNlL21hc3Rlci9kYXRhL3N0dWRlbnQuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>library(readr)
+student &lt;- read_csv(&quot;https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYGN1cmxgIHBhY2thZ2Ugbm90IGluc3RhbGxlZCwgZmFsbGluZyBiYWNrIHRvIHVzaW5nIGB1cmwoKWBcblBhcnNlZCB3aXRoIGNvbHVtbiBzcGVjaWZpY2F0aW9uOlxuY29scyhcbiAg5YWl5a245bm0ID0gY29sX2NoYXJhY3RlcigpLFxuICDlh7rnlJ/lnLAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIOaAp+WIpSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg6Lqr6auYID0gY29sX2RvdWJsZSgpXG4pXG4ifQ== -->
+<pre><code>`curl` package not installed, falling back to using `url()`
+Parsed with column specification:
+cols(
+  入學年 = col_character(),
+  出生地 = col_character(),
+  性別 = col_character(),
+  身高 = col_double()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChzdHVkZW50LG4gPSAxMEwpXG5gYGAifQ== -->
+<pre class="r"><code>head(student,n = 10L)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTB9LCJyZGYiOiJINHNJQUFBQUFBQUFBd3R5aVREaWl1QmlZR0JnWW1CbVpXUmdZZ1l5V1ppQUJDTURDd01uaUs1Z1lHQVdCb2tDc1FBUWMwRWxtQTBzTGVqQmhObkswQUFTNG56YXYrRnB6L1RuT3hhakNqemQwVVJBZ0F3dFNBTFBwcEdnQmNYRmJNK25iSC9Xc0J3NzcrblN6VVRLNFZOSmpBME1mQ0EzT2FROFlBQUJoOVFGRURxbEFjcUhpaWZENkFOUWVTaWRDcVhUR0ZERTBSSUxhM0pPWW5FeE5BQmdnbHdwaVNXSmVtbEZpYm1wNk1yemdHSXc1U3p3Z0d4ZCtuVHRqcWM3dDhBRjJuYzluekwvNlp3Tk1EOEJQZlMwWXltTTkyTFg2cGVyWjZBWnpWbVVYNjRITTU0WGxMNUJIdjMvLy84M0lQVVBUVEY3ZmtGSlpuNGVVQ2tUS0tXem9ubUFzUWhOUUtBMEQyUjBpbTV5Um1sZXRxNmhNU1M2Z2ZJUXdBdGxjeUd4V1NCMk12K0htc1VLTllzdE5TODlNeThWRmlJNWlVbXBPVkFPSDlBUFlDL29GUlJsNXBYQWdoTW9XcXhYa2wrU0NGUEhsWnlmQXhNQmU0N2hId0FCWmZsajJBTUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["入學年"],"name":[1],"type":["chr"],"align":["left"]},{"label":["出生地"],"name":[2],"type":["chr"],"align":["left"]},{"label":["性別"],"name":[3],"type":["chr"],"align":["left"]},{"label":["身高"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"098","2":"台北縣","3":"男性","4":"167"},{"1":"098","2":"台北市","3":"男性","4":"173"},{"1":"098","2":"台北市","3":"女性","4":"164"},{"1":"098","2":"台北縣","3":"男性","4":"175"},{"1":"098","2":"台北市","3":"女性","4":"159"},{"1":"098","2":"台北市","3":"女性","4":"158"},{"1":"098","2":"台北市","3":"男性","4":"166"},{"1":"098","2":"新北市","3":"男性","4":"174"},{"1":"098","2":"台北市","3":"男性","4":"176"},{"1":"098","2":"台北市","3":"女性","4":"166"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2VuZGVyIDwtIGMoXCLnlLfmgKdcIiwgXCLnlLfmgKdcIiwgXCLlpbPmgKdcIiwgXCLnlLfmgKdcIiwgXCLlpbPmgKdcIiwgXCLnlLfmgKdcIilcbmZhY3RvcihnZW5kZXIpXG5gYGAifQ== -->
+<pre class="r"><code>gender &lt;- c(&quot;男性&quot;, &quot;男性&quot;, &quot;女性&quot;, &quot;男性&quot;, &quot;女性&quot;, &quot;男性&quot;)
+factor(gender)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOeUt+aApyDnlLfmgKcg5aWz5oCnIOeUt+aApyDlpbPmgKcg55S35oCnXG5MZXZlbHM6IOeUt+aApyDlpbPmgKdcbiJ9 -->
+<pre><code>[1] 男性 男性 女性 男性 女性 男性
+Levels: 男性 女性</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0wOCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0wOCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0Kc3RyKDJMKQphPC1jKDJMLCAnYScsIDMuMCwgNCkKc3RyKGEpCmBgYApgYGB7cn0KbGlicmFyeShyZWFkcikKc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpCmhlYWQoc3R1ZGVudCxuID0gMTBMKQpgYGAKCmBgYHtyfQpnZW5kZXIgPC0gYygi55S35oCnIiwgIueUt+aApyIsICLlpbPmgKciLCAi55S35oCnIiwgIuWls+aApyIsICLnlLfmgKciKQpmYWN0b3IoZ2VuZGVyKQoKYGBgCgoK</div>
 
 
 
