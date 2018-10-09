@@ -18,5 +18,21 @@ gender <- c("男性", "男性", "女性", "男性", "女性", "男性")
 factor(gender)
 
 ```
+```{r}
+library(readr)
+library(stringr)
+library(lubridate)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Year <- TyphoonData$年份
+as.integer(Year)-1911
+as.character(Year)
+str_c("民國",Year,"年")
+```
+```{r}
+library(stringr)
+a <- c("1958-07-13 12:00", "1958-07-05 00:00", "1959-09-11 09:00")
+b <- str_sub(a, start = 6, end = 7)
+table(b)
+```
 
 
