@@ -15,7 +15,8 @@ head(student,n = 10L)
 
 ```{r}
 gender <- c("男性", "男性", "女性", "男性", "女性", "男性")
-factor(gender)
+gender <- factor(gender,levels = c("男性","女性"),lables=c("Male","Female"))
+gender
 
 ```
 ```{r}
@@ -24,15 +25,21 @@ library(stringr)
 library(lubridate)
 TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
 Year <- TyphoonData$年份
-as.integer(Year)-1911
-as.character(Year)
-str_c("民國",Year,"年")
+
+Year <- as.integer(Year)-1911
+Year <- as.character(Year)
+Year <- str_c("民國",Year,"年")
+Year
 ```
 ```{r}
+library(readr)
 library(stringr)
-a <- c("1958-07-13 12:00", "1958-07-05 00:00", "1959-09-11 09:00")
-b <- str_sub(a, start = 6, end = 7)
-table(b)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Time <- TyphoonData$發布警報時間
+head(Time)
+Time <- str_sub(Time,start = 6,end = 7)
+Time
+table(Time)
 ```
 
 

@@ -221,260 +221,162 @@ cols(
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2VuZGVyIDwtIGMoXCLnlLfmgKdcIiwgXCLnlLfmgKdcIiwgXCLlpbPmgKdcIiwgXCLnlLfmgKdcIiwgXCLlpbPmgKdcIiwgXCLnlLfmgKdcIilcbmZhY3RvcihnZW5kZXIpXG5gYGAifQ== -->
-<pre class="r"><code>gender &lt;- c(&quot;男性&quot;, &quot;男性&quot;, &quot;女性&quot;, &quot;男性&quot;, &quot;女性&quot;, &quot;男性&quot;)
-factor(gender)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2VuZGVyXG5cbmBgYCJ9 -->
+<pre class="r"><code>gender
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOeUt+aApyDnlLfmgKcg5aWz5oCnIOeUt+aApyDlpbPmgKcg55S35oCnXG5MZXZlbHM6IOeUt+aApyDlpbPmgKdcbiJ9 -->
-<pre><code>[1] 男性 男性 女性 男性 女性 男性
-Levels: 男性 女性</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwi55S35oCnXCIgXCLnlLfmgKdcIiBcIuWls+aAp1wiIFwi55S35oCnXCIgXCLlpbPmgKdcIiBcIueUt+aAp1wiXG4ifQ== -->
+<pre><code>[1] &quot;男性&quot; &quot;男性&quot; &quot;女性&quot; &quot;男性&quot; &quot;女性&quot; &quot;男性&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmxpYnJhcnkoc3RyaW5ncilcbmxpYnJhcnkobHVicmlkYXRlKVxuVHlwaG9vbkRhdGEgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2FyeUxLTC9jb3Vyc2UtcHJvZ3JhbW1pbmctZm9yLWRzLVF1aXovbWFzdGVyL1R5cGhvb25EYXRhLmNzdlwiLCBjb2xfdHlwZXMgPSBjb2xzKC5kZWZhdWx0ID0gY29sX2NoYXJhY3RlcigpKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmxpYnJhcnkoc3RyaW5ncilcbmxpYnJhcnkobHVicmlkYXRlKVxuVHlwaG9vbkRhdGEgPC0gcmVhZF9jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2FyeUxLTC9jb3Vyc2UtcHJvZ3JhbW1pbmctZm9yLWRzLVF1aXovbWFzdGVyL1R5cGhvb25EYXRhLmNzdlwiLCBjb2xfdHlwZXMgPSBjb2xzKC5kZWZhdWx0ID0gY29sX2NoYXJhY3RlcigpKSlcblllYXIgPC0gVHlwaG9vbkRhdGEk5bm05Lu9XG5ZZWFyIDwtIGFzLmludGVnZXIoWWVhciktMTkxMVxuWWVhciA8LSBhcy5jaGFyYWN0ZXIoWWVhcilcblllYXIgPC0gc3RyX2MoXCLmsJHlnItcIixZZWFyLFwi5bm0XCIpXG5ZZWFyXG5gYGAifQ== -->
 <pre class="r"><code>library(readr)
 library(stringr)
 library(lubridate)
-TyphoonData &lt;- read_csv(&quot;https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv&quot;, col_types = cols(.default = col_character()))</code></pre>
+TyphoonData &lt;- read_csv(&quot;https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv&quot;, col_types = cols(.default = col_character()))
+Year &lt;- TyphoonData$年份
+Year &lt;- as.integer(Year)-1911
+Year &lt;- as.character(Year)
+Year &lt;- str_c(&quot;民國&quot;,Year,&quot;年&quot;)
+Year</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYGN1cmxgIHBhY2thZ2Ugbm90IGluc3RhbGxlZCwgZmFsbGluZyBiYWNrIHRvIHVzaW5nIGB1cmwoKWBcbiJ9 -->
-<pre><code>`curl` package not installed, falling back to using `url()`</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWWVhciA8LSBUeXBob29uRGF0YSTlubTku71cbmFzLmludGVnZXIoWWVhciktMTkxMVxuYGBgIn0= -->
-<pre class="r"><code>Year &lt;- TyphoonData$年份
-as.integer(Year)-1911</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gMTA3IDEwNyAxMDYgMTA2IDEwNiAxMDYgMTA2IDEwNSAxMDUgMTA1IDEwNSAxMDUgMTA0XG4gWzE0XSAxMDQgMTA0IDEwNCAxMDQgMTA0IDEwMyAxMDMgMTAzIDEwMiAxMDIgMTAyIDEwMiAxMDJcbiBbMjddIDEwMiAxMDEgMTAxIDEwMSAxMDEgMTAxIDEwMSAxMDEgMTAxIDEwMCAxMDAgMTAwIDEwMFxuIFs0MF0gMTAwICA5OSAgOTkgIDk5ICA5OSAgOTkgIDk4ICA5OCAgOTggIDk4ICA5NyAgOTcgIDk3XG4gWzUzXSAgOTcgIDk3ICA5NyAgOTYgIDk2ICA5NiAgOTYgIDk2ICA5NiAgOTUgIDk1ICA5NSAgOTVcbiBbNjZdICA5NSAgOTUgIDk1ICA5NCAgOTQgIDk0ICA5NCAgOTQgIDk0ICA5NCAgOTMgIDkzICA5M1xuIFs3OV0gIDkzICA5MyAgOTMgIDkzICA5MyAgOTMgIDkyICA5MiAgOTIgIDkyICA5MiAgOTIgIDkyXG4gWzkyXSAgOTIgIDkyICA5MSAgOTEgIDkxICA5MCAgOTAgIDkwICA5MCAgOTAgIDkwICA5MCAgOTBcblsxMDVdICA5MCAgOTAgIDg5ICA4OSAgODkgIDg5ICA4OSAgODkgIDg5ICA4OCAgODggIDg4ICA4N1xuWzExOF0gIDg3ICA4NyAgODcgIDg3ICA4NiAgODYgIDg2ICA4NiAgODUgIDg1ICA4NSAgODUgIDg1XG5bMTMxXSAgODUgIDg1ICA4NCAgODQgIDg0ICA4NCAgODQgIDg0ICA4MyAgODMgIDgzICA4MyAgODNcblsxNDRdICA4MyAgODIgIDgyICA4MiAgODEgIDgxICA4MSAgODEgIDgxICA4MCAgODAgIDgwICA4MFxuWzE1N10gIDgwICA4MCAgODAgIDgwICA3OSAgNzkgIDc5ICA3OSAgNzkgIDc5ICA3OSAgNzkgIDc5XG5bMTcwXSAgNzggIDc4ICA3OCAgNzggIDc4ICA3OCAgNzggIDc3ICA3NyAgNzcgIDc3ICA3NyAgNzdcblsxODNdICA3NyAgNzcgIDc2ICA3NiAgNzYgIDc2ICA3NiAgNzYgIDc2ICA3NSAgNzUgIDc1ICA3NVxuWzE5Nl0gIDc1ICA3NSAgNzUgIDc1ICA3NSAgNzQgIDc0ICA3NCAgNzQgIDc0ICA3NCAgNzQgIDczXG5bMjA5XSAgNzMgIDczICA3MyAgNzMgIDczICA3MyAgNzIgIDcyICA3MiAgNzIgIDcxICA3MSAgNzFcblsyMjJdICA3MSAgNzEgIDcxICA3MSAgNzAgIDcwICA3MCAgNzAgIDcwICA3MCAgNzAgIDY5ICA2OVxuWzIzNV0gIDY5ICA2OSAgNjkgIDY5ICA2OSAgNjggIDY4ICA2OCAgNjggIDY4ICA2OCAgNjggIDY3XG5bMjQ4XSAgNjcgIDY3ICA2NyAgNjcgIDY3ICA2NiAgNjYgIDY2ICA2NiAgNjYgIDY2ICA2NiAgNjZcblsyNjFdICA2NSAgNjUgIDY1ICA2NSAgNjUgIDY1ICA2NSAgNjQgIDY0ICA2NCAgNjQgIDY0ICA2M1xuWzI3NF0gIDYzICA2MyAgNjMgIDYzICA2MyAgNjMgIDYzICA2MiAgNjIgIDYyICA2MiAgNjIgIDYyXG5bMjg3XSAgNjEgIDYxICA2MSAgNjEgIDYwICA2MCAgNjAgIDYwICA2MCAgNTkgIDU5ICA1OSAgNThcblszMDBdICA1OCAgNTggIDU4ICA1OCAgNTggIDU3ICA1NyAgNTcgIDU3ICA1NyAgNTcgIDU3ICA1N1xuWzMxM10gIDU2ICA1NiAgNTYgIDU2ICA1NiAgNTYgIDU2ICA1NiAgNTYgIDU1ICA1NSAgNTUgIDU1XG5bMzI2XSAgNTUgIDU1ICA1NSAgNTUgIDU1ICA1NSAgNTQgIDU0ICA1NCAgNTQgIDU0ICA1NCAgNTRcblszMzldICA1NCAgNTQgIDU0ICA1NCAgNTMgIDUzICA1MyAgNTMgIDUzICA1MyAgNTMgIDUzICA1M1xuWzM1Ml0gIDUzICA1MyAgNTMgIDUzICA1MyAgNTIgIDUyICA1MiAgNTIgIDUyICA1MiAgNTIgIDUxXG5bMzY1XSAgNTEgIDUxICA1MSAgNTEgIDUxICA1MSAgNTEgIDUxICA1MSAgNTEgIDUxICA1MSAgNTBcblszNzhdICA1MCAgNTAgIDUwICA1MCAgNTAgIDUwICA1MCAgNTAgIDUwICA1MCAgNTAgIDUwICA1MFxuWzM5MV0gIDUwICA1MCAgNDkgIDQ5ICA0OSAgNDkgIDQ5ICA0OSAgNDkgIDQ5ICA0OSAgNDkgIDQ5XG5bNDA0XSAgNDkgIDQ5ICA0OSAgNDggIDQ4ICA0OCAgNDggIDQ4ICA0OCAgNDggIDQ4ICA0OCAgNDhcbls0MTddICA0OCAgNDggIDQ4ICA0OCAgNDggIDQ3ICA0NyAgNDcgIDQ3ICA0N1xuIn0= -->
-<pre><code>  [1] 107 107 106 106 106 106 106 105 105 105 105 105 104
- [14] 104 104 104 104 104 103 103 103 102 102 102 102 102
- [27] 102 101 101 101 101 101 101 101 101 100 100 100 100
- [40] 100  99  99  99  99  99  98  98  98  98  97  97  97
- [53]  97  97  97  96  96  96  96  96  96  95  95  95  95
- [66]  95  95  95  94  94  94  94  94  94  94  93  93  93
- [79]  93  93  93  93  93  93  92  92  92  92  92  92  92
- [92]  92  92  91  91  91  90  90  90  90  90  90  90  90
-[105]  90  90  89  89  89  89  89  89  89  88  88  88  87
-[118]  87  87  87  87  86  86  86  86  85  85  85  85  85
-[131]  85  85  84  84  84  84  84  84  83  83  83  83  83
-[144]  83  82  82  82  81  81  81  81  81  80  80  80  80
-[157]  80  80  80  80  79  79  79  79  79  79  79  79  79
-[170]  78  78  78  78  78  78  78  77  77  77  77  77  77
-[183]  77  77  76  76  76  76  76  76  76  75  75  75  75
-[196]  75  75  75  75  75  74  74  74  74  74  74  74  73
-[209]  73  73  73  73  73  73  72  72  72  72  71  71  71
-[222]  71  71  71  71  70  70  70  70  70  70  70  69  69
-[235]  69  69  69  69  69  68  68  68  68  68  68  68  67
-[248]  67  67  67  67  67  66  66  66  66  66  66  66  66
-[261]  65  65  65  65  65  65  65  64  64  64  64  64  63
-[274]  63  63  63  63  63  63  63  62  62  62  62  62  62
-[287]  61  61  61  61  60  60  60  60  60  59  59  59  58
-[300]  58  58  58  58  58  57  57  57  57  57  57  57  57
-[313]  56  56  56  56  56  56  56  56  56  55  55  55  55
-[326]  55  55  55  55  55  55  54  54  54  54  54  54  54
-[339]  54  54  54  54  53  53  53  53  53  53  53  53  53
-[352]  53  53  53  53  53  52  52  52  52  52  52  52  51
-[365]  51  51  51  51  51  51  51  51  51  51  51  51  50
-[378]  50  50  50  50  50  50  50  50  50  50  50  50  50
-[391]  50  50  49  49  49  49  49  49  49  49  49  49  49
-[404]  49  49  49  48  48  48  48  48  48  48  48  48  48
-[417]  48  48  48  48  48  47  47  47  47  47</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMuY2hhcmFjdGVyKFllYXIpXG5gYGAifQ== -->
-<pre class="r"><code>as.character(Year)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCIyMDE4XCIgXCIyMDE4XCIgXCIyMDE3XCIgXCIyMDE3XCIgXCIyMDE3XCIgXCIyMDE3XCIgXCIyMDE3XCJcbiAgWzhdIFwiMjAxNlwiIFwiMjAxNlwiIFwiMjAxNlwiIFwiMjAxNlwiIFwiMjAxNlwiIFwiMjAxNVwiIFwiMjAxNVwiXG4gWzE1XSBcIjIwMTVcIiBcIjIwMTVcIiBcIjIwMTVcIiBcIjIwMTVcIiBcIjIwMTRcIiBcIjIwMTRcIiBcIjIwMTRcIlxuIFsyMl0gXCIyMDEzXCIgXCIyMDEzXCIgXCIyMDEzXCIgXCIyMDEzXCIgXCIyMDEzXCIgXCIyMDEzXCIgXCIyMDEyXCJcbiBbMjldIFwiMjAxMlwiIFwiMjAxMlwiIFwiMjAxMlwiIFwiMjAxMlwiIFwiMjAxMlwiIFwiMjAxMlwiIFwiMjAxMlwiXG4gWzM2XSBcIjIwMTFcIiBcIjIwMTFcIiBcIjIwMTFcIiBcIjIwMTFcIiBcIjIwMTFcIiBcIjIwMTBcIiBcIjIwMTBcIlxuIFs0M10gXCIyMDEwXCIgXCIyMDEwXCIgXCIyMDEwXCIgXCIyMDA5XCIgXCIyMDA5XCIgXCIyMDA5XCIgXCIyMDA5XCJcbiBbNTBdIFwiMjAwOFwiIFwiMjAwOFwiIFwiMjAwOFwiIFwiMjAwOFwiIFwiMjAwOFwiIFwiMjAwOFwiIFwiMjAwN1wiXG4gWzU3XSBcIjIwMDdcIiBcIjIwMDdcIiBcIjIwMDdcIiBcIjIwMDdcIiBcIjIwMDdcIiBcIjIwMDZcIiBcIjIwMDZcIlxuIFs2NF0gXCIyMDA2XCIgXCIyMDA2XCIgXCIyMDA2XCIgXCIyMDA2XCIgXCIyMDA2XCIgXCIyMDA1XCIgXCIyMDA1XCJcbiBbNzFdIFwiMjAwNVwiIFwiMjAwNVwiIFwiMjAwNVwiIFwiMjAwNVwiIFwiMjAwNVwiIFwiMjAwNFwiIFwiMjAwNFwiXG4gWzc4XSBcIjIwMDRcIiBcIjIwMDRcIiBcIjIwMDRcIiBcIjIwMDRcIiBcIjIwMDRcIiBcIjIwMDRcIiBcIjIwMDRcIlxuIFs4NV0gXCIyMDAzXCIgXCIyMDAzXCIgXCIyMDAzXCIgXCIyMDAzXCIgXCIyMDAzXCIgXCIyMDAzXCIgXCIyMDAzXCJcbiBbOTJdIFwiMjAwM1wiIFwiMjAwM1wiIFwiMjAwMlwiIFwiMjAwMlwiIFwiMjAwMlwiIFwiMjAwMVwiIFwiMjAwMVwiXG4gWzk5XSBcIjIwMDFcIiBcIjIwMDFcIiBcIjIwMDFcIiBcIjIwMDFcIiBcIjIwMDFcIiBcIjIwMDFcIiBcIjIwMDFcIlxuWzEwNl0gXCIyMDAxXCIgXCIyMDAwXCIgXCIyMDAwXCIgXCIyMDAwXCIgXCIyMDAwXCIgXCIyMDAwXCIgXCIyMDAwXCJcblsxMTNdIFwiMjAwMFwiIFwiMTk5OVwiIFwiMTk5OVwiIFwiMTk5OVwiIFwiMTk5OFwiIFwiMTk5OFwiIFwiMTk5OFwiXG5bMTIwXSBcIjE5OThcIiBcIjE5OThcIiBcIjE5OTdcIiBcIjE5OTdcIiBcIjE5OTdcIiBcIjE5OTdcIiBcIjE5OTZcIlxuWzEyN10gXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk2XCIgXCIxOTk1XCJcblsxMzRdIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5NVwiIFwiMTk5NFwiIFwiMTk5NFwiXG5bMTQxXSBcIjE5OTRcIiBcIjE5OTRcIiBcIjE5OTRcIiBcIjE5OTRcIiBcIjE5OTNcIiBcIjE5OTNcIiBcIjE5OTNcIlxuWzE0OF0gXCIxOTkyXCIgXCIxOTkyXCIgXCIxOTkyXCIgXCIxOTkyXCIgXCIxOTkyXCIgXCIxOTkxXCIgXCIxOTkxXCJcblsxNTVdIFwiMTk5MVwiIFwiMTk5MVwiIFwiMTk5MVwiIFwiMTk5MVwiIFwiMTk5MVwiIFwiMTk5MVwiIFwiMTk5MFwiXG5bMTYyXSBcIjE5OTBcIiBcIjE5OTBcIiBcIjE5OTBcIiBcIjE5OTBcIiBcIjE5OTBcIiBcIjE5OTBcIiBcIjE5OTBcIlxuWzE2OV0gXCIxOTkwXCIgXCIxOTg5XCIgXCIxOTg5XCIgXCIxOTg5XCIgXCIxOTg5XCIgXCIxOTg5XCIgXCIxOTg5XCJcblsxNzZdIFwiMTk4OVwiIFwiMTk4OFwiIFwiMTk4OFwiIFwiMTk4OFwiIFwiMTk4OFwiIFwiMTk4OFwiIFwiMTk4OFwiXG5bMTgzXSBcIjE5ODhcIiBcIjE5ODhcIiBcIjE5ODdcIiBcIjE5ODdcIiBcIjE5ODdcIiBcIjE5ODdcIiBcIjE5ODdcIlxuWzE5MF0gXCIxOTg3XCIgXCIxOTg3XCIgXCIxOTg2XCIgXCIxOTg2XCIgXCIxOTg2XCIgXCIxOTg2XCIgXCIxOTg2XCJcblsxOTddIFwiMTk4NlwiIFwiMTk4NlwiIFwiMTk4NlwiIFwiMTk4NlwiIFwiMTk4NVwiIFwiMTk4NVwiIFwiMTk4NVwiXG5bMjA0XSBcIjE5ODVcIiBcIjE5ODVcIiBcIjE5ODVcIiBcIjE5ODVcIiBcIjE5ODRcIiBcIjE5ODRcIiBcIjE5ODRcIlxuWzIxMV0gXCIxOTg0XCIgXCIxOTg0XCIgXCIxOTg0XCIgXCIxOTg0XCIgXCIxOTgzXCIgXCIxOTgzXCIgXCIxOTgzXCJcblsyMThdIFwiMTk4M1wiIFwiMTk4MlwiIFwiMTk4MlwiIFwiMTk4MlwiIFwiMTk4MlwiIFwiMTk4MlwiIFwiMTk4MlwiXG5bMjI1XSBcIjE5ODJcIiBcIjE5ODFcIiBcIjE5ODFcIiBcIjE5ODFcIiBcIjE5ODFcIiBcIjE5ODFcIiBcIjE5ODFcIlxuWzIzMl0gXCIxOTgxXCIgXCIxOTgwXCIgXCIxOTgwXCIgXCIxOTgwXCIgXCIxOTgwXCIgXCIxOTgwXCIgXCIxOTgwXCJcblsyMzldIFwiMTk4MFwiIFwiMTk3OVwiIFwiMTk3OVwiIFwiMTk3OVwiIFwiMTk3OVwiIFwiMTk3OVwiIFwiMTk3OVwiXG5bMjQ2XSBcIjE5NzlcIiBcIjE5NzhcIiBcIjE5NzhcIiBcIjE5NzhcIiBcIjE5NzhcIiBcIjE5NzhcIiBcIjE5NzhcIlxuWzI1M10gXCIxOTc3XCIgXCIxOTc3XCIgXCIxOTc3XCIgXCIxOTc3XCIgXCIxOTc3XCIgXCIxOTc3XCIgXCIxOTc3XCJcblsyNjBdIFwiMTk3N1wiIFwiMTk3NlwiIFwiMTk3NlwiIFwiMTk3NlwiIFwiMTk3NlwiIFwiMTk3NlwiIFwiMTk3NlwiXG5bMjY3XSBcIjE5NzZcIiBcIjE5NzVcIiBcIjE5NzVcIiBcIjE5NzVcIiBcIjE5NzVcIiBcIjE5NzVcIiBcIjE5NzRcIlxuWzI3NF0gXCIxOTc0XCIgXCIxOTc0XCIgXCIxOTc0XCIgXCIxOTc0XCIgXCIxOTc0XCIgXCIxOTc0XCIgXCIxOTc0XCJcblsyODFdIFwiMTk3M1wiIFwiMTk3M1wiIFwiMTk3M1wiIFwiMTk3M1wiIFwiMTk3M1wiIFwiMTk3M1wiIFwiMTk3MlwiXG5bMjg4XSBcIjE5NzJcIiBcIjE5NzJcIiBcIjE5NzJcIiBcIjE5NzFcIiBcIjE5NzFcIiBcIjE5NzFcIiBcIjE5NzFcIlxuWzI5NV0gXCIxOTcxXCIgXCIxOTcwXCIgXCIxOTcwXCIgXCIxOTcwXCIgXCIxOTY5XCIgXCIxOTY5XCIgXCIxOTY5XCJcblszMDJdIFwiMTk2OVwiIFwiMTk2OVwiIFwiMTk2OVwiIFwiMTk2OFwiIFwiMTk2OFwiIFwiMTk2OFwiIFwiMTk2OFwiXG5bMzA5XSBcIjE5NjhcIiBcIjE5NjhcIiBcIjE5NjhcIiBcIjE5NjhcIiBcIjE5NjdcIiBcIjE5NjdcIiBcIjE5NjdcIlxuWzMxNl0gXCIxOTY3XCIgXCIxOTY3XCIgXCIxOTY3XCIgXCIxOTY3XCIgXCIxOTY3XCIgXCIxOTY3XCIgXCIxOTY2XCJcblszMjNdIFwiMTk2NlwiIFwiMTk2NlwiIFwiMTk2NlwiIFwiMTk2NlwiIFwiMTk2NlwiIFwiMTk2NlwiIFwiMTk2NlwiXG5bMzMwXSBcIjE5NjZcIiBcIjE5NjZcIiBcIjE5NjVcIiBcIjE5NjVcIiBcIjE5NjVcIiBcIjE5NjVcIiBcIjE5NjVcIlxuWzMzN10gXCIxOTY1XCIgXCIxOTY1XCIgXCIxOTY1XCIgXCIxOTY1XCIgXCIxOTY1XCIgXCIxOTY1XCIgXCIxOTY0XCJcblszNDRdIFwiMTk2NFwiIFwiMTk2NFwiIFwiMTk2NFwiIFwiMTk2NFwiIFwiMTk2NFwiIFwiMTk2NFwiIFwiMTk2NFwiXG5bMzUxXSBcIjE5NjRcIiBcIjE5NjRcIiBcIjE5NjRcIiBcIjE5NjRcIiBcIjE5NjRcIiBcIjE5NjRcIiBcIjE5NjNcIlxuWzM1OF0gXCIxOTYzXCIgXCIxOTYzXCIgXCIxOTYzXCIgXCIxOTYzXCIgXCIxOTYzXCIgXCIxOTYzXCIgXCIxOTYyXCJcblszNjVdIFwiMTk2MlwiIFwiMTk2MlwiIFwiMTk2MlwiIFwiMTk2MlwiIFwiMTk2MlwiIFwiMTk2MlwiIFwiMTk2MlwiXG5bMzcyXSBcIjE5NjJcIiBcIjE5NjJcIiBcIjE5NjJcIiBcIjE5NjJcIiBcIjE5NjJcIiBcIjE5NjFcIiBcIjE5NjFcIlxuWzM3OV0gXCIxOTYxXCIgXCIxOTYxXCIgXCIxOTYxXCIgXCIxOTYxXCIgXCIxOTYxXCIgXCIxOTYxXCIgXCIxOTYxXCJcblszODZdIFwiMTk2MVwiIFwiMTk2MVwiIFwiMTk2MVwiIFwiMTk2MVwiIFwiMTk2MVwiIFwiMTk2MVwiIFwiMTk2MVwiXG5bMzkzXSBcIjE5NjBcIiBcIjE5NjBcIiBcIjE5NjBcIiBcIjE5NjBcIiBcIjE5NjBcIiBcIjE5NjBcIiBcIjE5NjBcIlxuWzQwMF0gXCIxOTYwXCIgXCIxOTYwXCIgXCIxOTYwXCIgXCIxOTYwXCIgXCIxOTYwXCIgXCIxOTYwXCIgXCIxOTYwXCJcbls0MDddIFwiMTk1OVwiIFwiMTk1OVwiIFwiMTk1OVwiIFwiMTk1OVwiIFwiMTk1OVwiIFwiMTk1OVwiIFwiMTk1OVwiXG5bNDE0XSBcIjE5NTlcIiBcIjE5NTlcIiBcIjE5NTlcIiBcIjE5NTlcIiBcIjE5NTlcIiBcIjE5NTlcIiBcIjE5NTlcIlxuWzQyMV0gXCIxOTU5XCIgXCIxOTU4XCIgXCIxOTU4XCIgXCIxOTU4XCIgXCIxOTU4XCIgXCIxOTU4XCJcbiJ9 -->
-<pre><code>  [1] &quot;2018&quot; &quot;2018&quot; &quot;2017&quot; &quot;2017&quot; &quot;2017&quot; &quot;2017&quot; &quot;2017&quot;
-  [8] &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2016&quot; &quot;2015&quot; &quot;2015&quot;
- [15] &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2015&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot;
- [22] &quot;2013&quot; &quot;2013&quot; &quot;2013&quot; &quot;2013&quot; &quot;2013&quot; &quot;2013&quot; &quot;2012&quot;
- [29] &quot;2012&quot; &quot;2012&quot; &quot;2012&quot; &quot;2012&quot; &quot;2012&quot; &quot;2012&quot; &quot;2012&quot;
- [36] &quot;2011&quot; &quot;2011&quot; &quot;2011&quot; &quot;2011&quot; &quot;2011&quot; &quot;2010&quot; &quot;2010&quot;
- [43] &quot;2010&quot; &quot;2010&quot; &quot;2010&quot; &quot;2009&quot; &quot;2009&quot; &quot;2009&quot; &quot;2009&quot;
- [50] &quot;2008&quot; &quot;2008&quot; &quot;2008&quot; &quot;2008&quot; &quot;2008&quot; &quot;2008&quot; &quot;2007&quot;
- [57] &quot;2007&quot; &quot;2007&quot; &quot;2007&quot; &quot;2007&quot; &quot;2007&quot; &quot;2006&quot; &quot;2006&quot;
- [64] &quot;2006&quot; &quot;2006&quot; &quot;2006&quot; &quot;2006&quot; &quot;2006&quot; &quot;2005&quot; &quot;2005&quot;
- [71] &quot;2005&quot; &quot;2005&quot; &quot;2005&quot; &quot;2005&quot; &quot;2005&quot; &quot;2004&quot; &quot;2004&quot;
- [78] &quot;2004&quot; &quot;2004&quot; &quot;2004&quot; &quot;2004&quot; &quot;2004&quot; &quot;2004&quot; &quot;2004&quot;
- [85] &quot;2003&quot; &quot;2003&quot; &quot;2003&quot; &quot;2003&quot; &quot;2003&quot; &quot;2003&quot; &quot;2003&quot;
- [92] &quot;2003&quot; &quot;2003&quot; &quot;2002&quot; &quot;2002&quot; &quot;2002&quot; &quot;2001&quot; &quot;2001&quot;
- [99] &quot;2001&quot; &quot;2001&quot; &quot;2001&quot; &quot;2001&quot; &quot;2001&quot; &quot;2001&quot; &quot;2001&quot;
-[106] &quot;2001&quot; &quot;2000&quot; &quot;2000&quot; &quot;2000&quot; &quot;2000&quot; &quot;2000&quot; &quot;2000&quot;
-[113] &quot;2000&quot; &quot;1999&quot; &quot;1999&quot; &quot;1999&quot; &quot;1998&quot; &quot;1998&quot; &quot;1998&quot;
-[120] &quot;1998&quot; &quot;1998&quot; &quot;1997&quot; &quot;1997&quot; &quot;1997&quot; &quot;1997&quot; &quot;1996&quot;
-[127] &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1996&quot; &quot;1995&quot;
-[134] &quot;1995&quot; &quot;1995&quot; &quot;1995&quot; &quot;1995&quot; &quot;1995&quot; &quot;1994&quot; &quot;1994&quot;
-[141] &quot;1994&quot; &quot;1994&quot; &quot;1994&quot; &quot;1994&quot; &quot;1993&quot; &quot;1993&quot; &quot;1993&quot;
-[148] &quot;1992&quot; &quot;1992&quot; &quot;1992&quot; &quot;1992&quot; &quot;1992&quot; &quot;1991&quot; &quot;1991&quot;
-[155] &quot;1991&quot; &quot;1991&quot; &quot;1991&quot; &quot;1991&quot; &quot;1991&quot; &quot;1991&quot; &quot;1990&quot;
-[162] &quot;1990&quot; &quot;1990&quot; &quot;1990&quot; &quot;1990&quot; &quot;1990&quot; &quot;1990&quot; &quot;1990&quot;
-[169] &quot;1990&quot; &quot;1989&quot; &quot;1989&quot; &quot;1989&quot; &quot;1989&quot; &quot;1989&quot; &quot;1989&quot;
-[176] &quot;1989&quot; &quot;1988&quot; &quot;1988&quot; &quot;1988&quot; &quot;1988&quot; &quot;1988&quot; &quot;1988&quot;
-[183] &quot;1988&quot; &quot;1988&quot; &quot;1987&quot; &quot;1987&quot; &quot;1987&quot; &quot;1987&quot; &quot;1987&quot;
-[190] &quot;1987&quot; &quot;1987&quot; &quot;1986&quot; &quot;1986&quot; &quot;1986&quot; &quot;1986&quot; &quot;1986&quot;
-[197] &quot;1986&quot; &quot;1986&quot; &quot;1986&quot; &quot;1986&quot; &quot;1985&quot; &quot;1985&quot; &quot;1985&quot;
-[204] &quot;1985&quot; &quot;1985&quot; &quot;1985&quot; &quot;1985&quot; &quot;1984&quot; &quot;1984&quot; &quot;1984&quot;
-[211] &quot;1984&quot; &quot;1984&quot; &quot;1984&quot; &quot;1984&quot; &quot;1983&quot; &quot;1983&quot; &quot;1983&quot;
-[218] &quot;1983&quot; &quot;1982&quot; &quot;1982&quot; &quot;1982&quot; &quot;1982&quot; &quot;1982&quot; &quot;1982&quot;
-[225] &quot;1982&quot; &quot;1981&quot; &quot;1981&quot; &quot;1981&quot; &quot;1981&quot; &quot;1981&quot; &quot;1981&quot;
-[232] &quot;1981&quot; &quot;1980&quot; &quot;1980&quot; &quot;1980&quot; &quot;1980&quot; &quot;1980&quot; &quot;1980&quot;
-[239] &quot;1980&quot; &quot;1979&quot; &quot;1979&quot; &quot;1979&quot; &quot;1979&quot; &quot;1979&quot; &quot;1979&quot;
-[246] &quot;1979&quot; &quot;1978&quot; &quot;1978&quot; &quot;1978&quot; &quot;1978&quot; &quot;1978&quot; &quot;1978&quot;
-[253] &quot;1977&quot; &quot;1977&quot; &quot;1977&quot; &quot;1977&quot; &quot;1977&quot; &quot;1977&quot; &quot;1977&quot;
-[260] &quot;1977&quot; &quot;1976&quot; &quot;1976&quot; &quot;1976&quot; &quot;1976&quot; &quot;1976&quot; &quot;1976&quot;
-[267] &quot;1976&quot; &quot;1975&quot; &quot;1975&quot; &quot;1975&quot; &quot;1975&quot; &quot;1975&quot; &quot;1974&quot;
-[274] &quot;1974&quot; &quot;1974&quot; &quot;1974&quot; &quot;1974&quot; &quot;1974&quot; &quot;1974&quot; &quot;1974&quot;
-[281] &quot;1973&quot; &quot;1973&quot; &quot;1973&quot; &quot;1973&quot; &quot;1973&quot; &quot;1973&quot; &quot;1972&quot;
-[288] &quot;1972&quot; &quot;1972&quot; &quot;1972&quot; &quot;1971&quot; &quot;1971&quot; &quot;1971&quot; &quot;1971&quot;
-[295] &quot;1971&quot; &quot;1970&quot; &quot;1970&quot; &quot;1970&quot; &quot;1969&quot; &quot;1969&quot; &quot;1969&quot;
-[302] &quot;1969&quot; &quot;1969&quot; &quot;1969&quot; &quot;1968&quot; &quot;1968&quot; &quot;1968&quot; &quot;1968&quot;
-[309] &quot;1968&quot; &quot;1968&quot; &quot;1968&quot; &quot;1968&quot; &quot;1967&quot; &quot;1967&quot; &quot;1967&quot;
-[316] &quot;1967&quot; &quot;1967&quot; &quot;1967&quot; &quot;1967&quot; &quot;1967&quot; &quot;1967&quot; &quot;1966&quot;
-[323] &quot;1966&quot; &quot;1966&quot; &quot;1966&quot; &quot;1966&quot; &quot;1966&quot; &quot;1966&quot; &quot;1966&quot;
-[330] &quot;1966&quot; &quot;1966&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot;
-[337] &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1965&quot; &quot;1964&quot;
-[344] &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot;
-[351] &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1964&quot; &quot;1963&quot;
-[358] &quot;1963&quot; &quot;1963&quot; &quot;1963&quot; &quot;1963&quot; &quot;1963&quot; &quot;1963&quot; &quot;1962&quot;
-[365] &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot;
-[372] &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1962&quot; &quot;1961&quot; &quot;1961&quot;
-[379] &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot;
-[386] &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot; &quot;1961&quot;
-[393] &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot;
-[400] &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot; &quot;1960&quot;
-[407] &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot;
-[414] &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot; &quot;1959&quot;
-[421] &quot;1959&quot; &quot;1958&quot; &quot;1958&quot; &quot;1958&quot; &quot;1958&quot; &quot;1958&quot;</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RyX2MoXCLmsJHlnItcIixZZWFyLFwi5bm0XCIpXG5gYGAifQ== -->
-<pre class="r"><code>str_c(&quot;民國&quot;,Year,&quot;年&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCLmsJHlnIsyMDE45bm0XCIgXCLmsJHlnIsyMDE45bm0XCIgXCLmsJHlnIsyMDE35bm0XCIgXCLmsJHlnIsyMDE35bm0XCJcbiAgWzVdIFwi5rCR5ZyLMjAxN+W5tFwiIFwi5rCR5ZyLMjAxN+W5tFwiIFwi5rCR5ZyLMjAxN+W5tFwiIFwi5rCR5ZyLMjAxNuW5tFwiXG4gIFs5XSBcIuawkeWcizIwMTblubRcIiBcIuawkeWcizIwMTblubRcIiBcIuawkeWcizIwMTblubRcIiBcIuawkeWcizIwMTblubRcIlxuIFsxM10gXCLmsJHlnIsyMDE15bm0XCIgXCLmsJHlnIsyMDE15bm0XCIgXCLmsJHlnIsyMDE15bm0XCIgXCLmsJHlnIsyMDE15bm0XCJcbiBbMTddIFwi5rCR5ZyLMjAxNeW5tFwiIFwi5rCR5ZyLMjAxNeW5tFwiIFwi5rCR5ZyLMjAxNOW5tFwiIFwi5rCR5ZyLMjAxNOW5tFwiXG4gWzIxXSBcIuawkeWcizIwMTTlubRcIiBcIuawkeWcizIwMTPlubRcIiBcIuawkeWcizIwMTPlubRcIiBcIuawkeWcizIwMTPlubRcIlxuIFsyNV0gXCLmsJHlnIsyMDEz5bm0XCIgXCLmsJHlnIsyMDEz5bm0XCIgXCLmsJHlnIsyMDEz5bm0XCIgXCLmsJHlnIsyMDEy5bm0XCJcbiBbMjldIFwi5rCR5ZyLMjAxMuW5tFwiIFwi5rCR5ZyLMjAxMuW5tFwiIFwi5rCR5ZyLMjAxMuW5tFwiIFwi5rCR5ZyLMjAxMuW5tFwiXG4gWzMzXSBcIuawkeWcizIwMTLlubRcIiBcIuawkeWcizIwMTLlubRcIiBcIuawkeWcizIwMTLlubRcIiBcIuawkeWcizIwMTHlubRcIlxuIFszN10gXCLmsJHlnIsyMDEx5bm0XCIgXCLmsJHlnIsyMDEx5bm0XCIgXCLmsJHlnIsyMDEx5bm0XCIgXCLmsJHlnIsyMDEx5bm0XCJcbiBbNDFdIFwi5rCR5ZyLMjAxMOW5tFwiIFwi5rCR5ZyLMjAxMOW5tFwiIFwi5rCR5ZyLMjAxMOW5tFwiIFwi5rCR5ZyLMjAxMOW5tFwiXG4gWzQ1XSBcIuawkeWcizIwMTDlubRcIiBcIuawkeWcizIwMDnlubRcIiBcIuawkeWcizIwMDnlubRcIiBcIuawkeWcizIwMDnlubRcIlxuIFs0OV0gXCLmsJHlnIsyMDA55bm0XCIgXCLmsJHlnIsyMDA45bm0XCIgXCLmsJHlnIsyMDA45bm0XCIgXCLmsJHlnIsyMDA45bm0XCJcbiBbNTNdIFwi5rCR5ZyLMjAwOOW5tFwiIFwi5rCR5ZyLMjAwOOW5tFwiIFwi5rCR5ZyLMjAwOOW5tFwiIFwi5rCR5ZyLMjAwN+W5tFwiXG4gWzU3XSBcIuawkeWcizIwMDflubRcIiBcIuawkeWcizIwMDflubRcIiBcIuawkeWcizIwMDflubRcIiBcIuawkeWcizIwMDflubRcIlxuIFs2MV0gXCLmsJHlnIsyMDA35bm0XCIgXCLmsJHlnIsyMDA25bm0XCIgXCLmsJHlnIsyMDA25bm0XCIgXCLmsJHlnIsyMDA25bm0XCJcbiBbNjVdIFwi5rCR5ZyLMjAwNuW5tFwiIFwi5rCR5ZyLMjAwNuW5tFwiIFwi5rCR5ZyLMjAwNuW5tFwiIFwi5rCR5ZyLMjAwNuW5tFwiXG4gWzY5XSBcIuawkeWcizIwMDXlubRcIiBcIuawkeWcizIwMDXlubRcIiBcIuawkeWcizIwMDXlubRcIiBcIuawkeWcizIwMDXlubRcIlxuIFs3M10gXCLmsJHlnIsyMDA15bm0XCIgXCLmsJHlnIsyMDA15bm0XCIgXCLmsJHlnIsyMDA15bm0XCIgXCLmsJHlnIsyMDA05bm0XCJcbiBbNzddIFwi5rCR5ZyLMjAwNOW5tFwiIFwi5rCR5ZyLMjAwNOW5tFwiIFwi5rCR5ZyLMjAwNOW5tFwiIFwi5rCR5ZyLMjAwNOW5tFwiXG4gWzgxXSBcIuawkeWcizIwMDTlubRcIiBcIuawkeWcizIwMDTlubRcIiBcIuawkeWcizIwMDTlubRcIiBcIuawkeWcizIwMDTlubRcIlxuIFs4NV0gXCLmsJHlnIsyMDAz5bm0XCIgXCLmsJHlnIsyMDAz5bm0XCIgXCLmsJHlnIsyMDAz5bm0XCIgXCLmsJHlnIsyMDAz5bm0XCJcbiBbODldIFwi5rCR5ZyLMjAwM+W5tFwiIFwi5rCR5ZyLMjAwM+W5tFwiIFwi5rCR5ZyLMjAwM+W5tFwiIFwi5rCR5ZyLMjAwM+W5tFwiXG4gWzkzXSBcIuawkeWcizIwMDPlubRcIiBcIuawkeWcizIwMDLlubRcIiBcIuawkeWcizIwMDLlubRcIiBcIuawkeWcizIwMDLlubRcIlxuIFs5N10gXCLmsJHlnIsyMDAx5bm0XCIgXCLmsJHlnIsyMDAx5bm0XCIgXCLmsJHlnIsyMDAx5bm0XCIgXCLmsJHlnIsyMDAx5bm0XCJcblsxMDFdIFwi5rCR5ZyLMjAwMeW5tFwiIFwi5rCR5ZyLMjAwMeW5tFwiIFwi5rCR5ZyLMjAwMeW5tFwiIFwi5rCR5ZyLMjAwMeW5tFwiXG5bMTA1XSBcIuawkeWcizIwMDHlubRcIiBcIuawkeWcizIwMDHlubRcIiBcIuawkeWcizIwMDDlubRcIiBcIuawkeWcizIwMDDlubRcIlxuWzEwOV0gXCLmsJHlnIsyMDAw5bm0XCIgXCLmsJHlnIsyMDAw5bm0XCIgXCLmsJHlnIsyMDAw5bm0XCIgXCLmsJHlnIsyMDAw5bm0XCJcblsxMTNdIFwi5rCR5ZyLMjAwMOW5tFwiIFwi5rCR5ZyLMTk5OeW5tFwiIFwi5rCR5ZyLMTk5OeW5tFwiIFwi5rCR5ZyLMTk5OeW5tFwiXG5bMTE3XSBcIuawkeWcizE5OTjlubRcIiBcIuawkeWcizE5OTjlubRcIiBcIuawkeWcizE5OTjlubRcIiBcIuawkeWcizE5OTjlubRcIlxuWzEyMV0gXCLmsJHlnIsxOTk45bm0XCIgXCLmsJHlnIsxOTk35bm0XCIgXCLmsJHlnIsxOTk35bm0XCIgXCLmsJHlnIsxOTk35bm0XCJcblsxMjVdIFwi5rCR5ZyLMTk5N+W5tFwiIFwi5rCR5ZyLMTk5NuW5tFwiIFwi5rCR5ZyLMTk5NuW5tFwiIFwi5rCR5ZyLMTk5NuW5tFwiXG5bMTI5XSBcIuawkeWcizE5OTblubRcIiBcIuawkeWcizE5OTblubRcIiBcIuawkeWcizE5OTblubRcIiBcIuawkeWcizE5OTblubRcIlxuWzEzM10gXCLmsJHlnIsxOTk15bm0XCIgXCLmsJHlnIsxOTk15bm0XCIgXCLmsJHlnIsxOTk15bm0XCIgXCLmsJHlnIsxOTk15bm0XCJcblsxMzddIFwi5rCR5ZyLMTk5NeW5tFwiIFwi5rCR5ZyLMTk5NeW5tFwiIFwi5rCR5ZyLMTk5NOW5tFwiIFwi5rCR5ZyLMTk5NOW5tFwiXG5bMTQxXSBcIuawkeWcizE5OTTlubRcIiBcIuawkeWcizE5OTTlubRcIiBcIuawkeWcizE5OTTlubRcIiBcIuawkeWcizE5OTTlubRcIlxuWzE0NV0gXCLmsJHlnIsxOTkz5bm0XCIgXCLmsJHlnIsxOTkz5bm0XCIgXCLmsJHlnIsxOTkz5bm0XCIgXCLmsJHlnIsxOTky5bm0XCJcblsxNDldIFwi5rCR5ZyLMTk5MuW5tFwiIFwi5rCR5ZyLMTk5MuW5tFwiIFwi5rCR5ZyLMTk5MuW5tFwiIFwi5rCR5ZyLMTk5MuW5tFwiXG5bMTUzXSBcIuawkeWcizE5OTHlubRcIiBcIuawkeWcizE5OTHlubRcIiBcIuawkeWcizE5OTHlubRcIiBcIuawkeWcizE5OTHlubRcIlxuWzE1N10gXCLmsJHlnIsxOTkx5bm0XCIgXCLmsJHlnIsxOTkx5bm0XCIgXCLmsJHlnIsxOTkx5bm0XCIgXCLmsJHlnIsxOTkx5bm0XCJcblsxNjFdIFwi5rCR5ZyLMTk5MOW5tFwiIFwi5rCR5ZyLMTk5MOW5tFwiIFwi5rCR5ZyLMTk5MOW5tFwiIFwi5rCR5ZyLMTk5MOW5tFwiXG5bMTY1XSBcIuawkeWcizE5OTDlubRcIiBcIuawkeWcizE5OTDlubRcIiBcIuawkeWcizE5OTDlubRcIiBcIuawkeWcizE5OTDlubRcIlxuWzE2OV0gXCLmsJHlnIsxOTkw5bm0XCIgXCLmsJHlnIsxOTg55bm0XCIgXCLmsJHlnIsxOTg55bm0XCIgXCLmsJHlnIsxOTg55bm0XCJcblsxNzNdIFwi5rCR5ZyLMTk4OeW5tFwiIFwi5rCR5ZyLMTk4OeW5tFwiIFwi5rCR5ZyLMTk4OeW5tFwiIFwi5rCR5ZyLMTk4OeW5tFwiXG5bMTc3XSBcIuawkeWcizE5ODjlubRcIiBcIuawkeWcizE5ODjlubRcIiBcIuawkeWcizE5ODjlubRcIiBcIuawkeWcizE5ODjlubRcIlxuWzE4MV0gXCLmsJHlnIsxOTg45bm0XCIgXCLmsJHlnIsxOTg45bm0XCIgXCLmsJHlnIsxOTg45bm0XCIgXCLmsJHlnIsxOTg45bm0XCJcblsxODVdIFwi5rCR5ZyLMTk4N+W5tFwiIFwi5rCR5ZyLMTk4N+W5tFwiIFwi5rCR5ZyLMTk4N+W5tFwiIFwi5rCR5ZyLMTk4N+W5tFwiXG5bMTg5XSBcIuawkeWcizE5ODflubRcIiBcIuawkeWcizE5ODflubRcIiBcIuawkeWcizE5ODflubRcIiBcIuawkeWcizE5ODblubRcIlxuWzE5M10gXCLmsJHlnIsxOTg25bm0XCIgXCLmsJHlnIsxOTg25bm0XCIgXCLmsJHlnIsxOTg25bm0XCIgXCLmsJHlnIsxOTg25bm0XCJcblsxOTddIFwi5rCR5ZyLMTk4NuW5tFwiIFwi5rCR5ZyLMTk4NuW5tFwiIFwi5rCR5ZyLMTk4NuW5tFwiIFwi5rCR5ZyLMTk4NuW5tFwiXG5bMjAxXSBcIuawkeWcizE5ODXlubRcIiBcIuawkeWcizE5ODXlubRcIiBcIuawkeWcizE5ODXlubRcIiBcIuawkeWcizE5ODXlubRcIlxuWzIwNV0gXCLmsJHlnIsxOTg15bm0XCIgXCLmsJHlnIsxOTg15bm0XCIgXCLmsJHlnIsxOTg15bm0XCIgXCLmsJHlnIsxOTg05bm0XCJcblsyMDldIFwi5rCR5ZyLMTk4NOW5tFwiIFwi5rCR5ZyLMTk4NOW5tFwiIFwi5rCR5ZyLMTk4NOW5tFwiIFwi5rCR5ZyLMTk4NOW5tFwiXG5bMjEzXSBcIuawkeWcizE5ODTlubRcIiBcIuawkeWcizE5ODTlubRcIiBcIuawkeWcizE5ODPlubRcIiBcIuawkeWcizE5ODPlubRcIlxuWzIxN10gXCLmsJHlnIsxOTgz5bm0XCIgXCLmsJHlnIsxOTgz5bm0XCIgXCLmsJHlnIsxOTgy5bm0XCIgXCLmsJHlnIsxOTgy5bm0XCJcblsyMjFdIFwi5rCR5ZyLMTk4MuW5tFwiIFwi5rCR5ZyLMTk4MuW5tFwiIFwi5rCR5ZyLMTk4MuW5tFwiIFwi5rCR5ZyLMTk4MuW5tFwiXG5bMjI1XSBcIuawkeWcizE5ODLlubRcIiBcIuawkeWcizE5ODHlubRcIiBcIuawkeWcizE5ODHlubRcIiBcIuawkeWcizE5ODHlubRcIlxuWzIyOV0gXCLmsJHlnIsxOTgx5bm0XCIgXCLmsJHlnIsxOTgx5bm0XCIgXCLmsJHlnIsxOTgx5bm0XCIgXCLmsJHlnIsxOTgx5bm0XCJcblsyMzNdIFwi5rCR5ZyLMTk4MOW5tFwiIFwi5rCR5ZyLMTk4MOW5tFwiIFwi5rCR5ZyLMTk4MOW5tFwiIFwi5rCR5ZyLMTk4MOW5tFwiXG5bMjM3XSBcIuawkeWcizE5ODDlubRcIiBcIuawkeWcizE5ODDlubRcIiBcIuawkeWcizE5ODDlubRcIiBcIuawkeWcizE5NznlubRcIlxuWzI0MV0gXCLmsJHlnIsxOTc55bm0XCIgXCLmsJHlnIsxOTc55bm0XCIgXCLmsJHlnIsxOTc55bm0XCIgXCLmsJHlnIsxOTc55bm0XCJcblsyNDVdIFwi5rCR5ZyLMTk3OeW5tFwiIFwi5rCR5ZyLMTk3OeW5tFwiIFwi5rCR5ZyLMTk3OOW5tFwiIFwi5rCR5ZyLMTk3OOW5tFwiXG5bMjQ5XSBcIuawkeWcizE5NzjlubRcIiBcIuawkeWcizE5NzjlubRcIiBcIuawkeWcizE5NzjlubRcIiBcIuawkeWcizE5NzjlubRcIlxuWzI1M10gXCLmsJHlnIsxOTc35bm0XCIgXCLmsJHlnIsxOTc35bm0XCIgXCLmsJHlnIsxOTc35bm0XCIgXCLmsJHlnIsxOTc35bm0XCJcblsyNTddIFwi5rCR5ZyLMTk3N+W5tFwiIFwi5rCR5ZyLMTk3N+W5tFwiIFwi5rCR5ZyLMTk3N+W5tFwiIFwi5rCR5ZyLMTk3N+W5tFwiXG5bMjYxXSBcIuawkeWcizE5NzblubRcIiBcIuawkeWcizE5NzblubRcIiBcIuawkeWcizE5NzblubRcIiBcIuawkeWcizE5NzblubRcIlxuWzI2NV0gXCLmsJHlnIsxOTc25bm0XCIgXCLmsJHlnIsxOTc25bm0XCIgXCLmsJHlnIsxOTc25bm0XCIgXCLmsJHlnIsxOTc15bm0XCJcblsyNjldIFwi5rCR5ZyLMTk3NeW5tFwiIFwi5rCR5ZyLMTk3NeW5tFwiIFwi5rCR5ZyLMTk3NeW5tFwiIFwi5rCR5ZyLMTk3NeW5tFwiXG5bMjczXSBcIuawkeWcizE5NzTlubRcIiBcIuawkeWcizE5NzTlubRcIiBcIuawkeWcizE5NzTlubRcIiBcIuawkeWcizE5NzTlubRcIlxuWzI3N10gXCLmsJHlnIsxOTc05bm0XCIgXCLmsJHlnIsxOTc05bm0XCIgXCLmsJHlnIsxOTc05bm0XCIgXCLmsJHlnIsxOTc05bm0XCJcblsyODFdIFwi5rCR5ZyLMTk3M+W5tFwiIFwi5rCR5ZyLMTk3M+W5tFwiIFwi5rCR5ZyLMTk3M+W5tFwiIFwi5rCR5ZyLMTk3M+W5tFwiXG5bMjg1XSBcIuawkeWcizE5NzPlubRcIiBcIuawkeWcizE5NzPlubRcIiBcIuawkeWcizE5NzLlubRcIiBcIuawkeWcizE5NzLlubRcIlxuWzI4OV0gXCLmsJHlnIsxOTcy5bm0XCIgXCLmsJHlnIsxOTcy5bm0XCIgXCLmsJHlnIsxOTcx5bm0XCIgXCLmsJHlnIsxOTcx5bm0XCJcblsyOTNdIFwi5rCR5ZyLMTk3MeW5tFwiIFwi5rCR5ZyLMTk3MeW5tFwiIFwi5rCR5ZyLMTk3MeW5tFwiIFwi5rCR5ZyLMTk3MOW5tFwiXG5bMjk3XSBcIuawkeWcizE5NzDlubRcIiBcIuawkeWcizE5NzDlubRcIiBcIuawkeWcizE5NjnlubRcIiBcIuawkeWcizE5NjnlubRcIlxuWzMwMV0gXCLmsJHlnIsxOTY55bm0XCIgXCLmsJHlnIsxOTY55bm0XCIgXCLmsJHlnIsxOTY55bm0XCIgXCLmsJHlnIsxOTY55bm0XCJcblszMDVdIFwi5rCR5ZyLMTk2OOW5tFwiIFwi5rCR5ZyLMTk2OOW5tFwiIFwi5rCR5ZyLMTk2OOW5tFwiIFwi5rCR5ZyLMTk2OOW5tFwiXG5bMzA5XSBcIuawkeWcizE5NjjlubRcIiBcIuawkeWcizE5NjjlubRcIiBcIuawkeWcizE5NjjlubRcIiBcIuawkeWcizE5NjjlubRcIlxuWzMxM10gXCLmsJHlnIsxOTY35bm0XCIgXCLmsJHlnIsxOTY35bm0XCIgXCLmsJHlnIsxOTY35bm0XCIgXCLmsJHlnIsxOTY35bm0XCJcblszMTddIFwi5rCR5ZyLMTk2N+W5tFwiIFwi5rCR5ZyLMTk2N+W5tFwiIFwi5rCR5ZyLMTk2N+W5tFwiIFwi5rCR5ZyLMTk2N+W5tFwiXG5bMzIxXSBcIuawkeWcizE5NjflubRcIiBcIuawkeWcizE5NjblubRcIiBcIuawkeWcizE5NjblubRcIiBcIuawkeWcizE5NjblubRcIlxuWzMyNV0gXCLmsJHlnIsxOTY25bm0XCIgXCLmsJHlnIsxOTY25bm0XCIgXCLmsJHlnIsxOTY25bm0XCIgXCLmsJHlnIsxOTY25bm0XCJcblszMjldIFwi5rCR5ZyLMTk2NuW5tFwiIFwi5rCR5ZyLMTk2NuW5tFwiIFwi5rCR5ZyLMTk2NuW5tFwiIFwi5rCR5ZyLMTk2NeW5tFwiXG5bMzMzXSBcIuawkeWcizE5NjXlubRcIiBcIuawkeWcizE5NjXlubRcIiBcIuawkeWcizE5NjXlubRcIiBcIuawkeWcizE5NjXlubRcIlxuWzMzN10gXCLmsJHlnIsxOTY15bm0XCIgXCLmsJHlnIsxOTY15bm0XCIgXCLmsJHlnIsxOTY15bm0XCIgXCLmsJHlnIsxOTY15bm0XCJcblszNDFdIFwi5rCR5ZyLMTk2NeW5tFwiIFwi5rCR5ZyLMTk2NeW5tFwiIFwi5rCR5ZyLMTk2NOW5tFwiIFwi5rCR5ZyLMTk2NOW5tFwiXG5bMzQ1XSBcIuawkeWcizE5NjTlubRcIiBcIuawkeWcizE5NjTlubRcIiBcIuawkeWcizE5NjTlubRcIiBcIuawkeWcizE5NjTlubRcIlxuWzM0OV0gXCLmsJHlnIsxOTY05bm0XCIgXCLmsJHlnIsxOTY05bm0XCIgXCLmsJHlnIsxOTY05bm0XCIgXCLmsJHlnIsxOTY05bm0XCJcblszNTNdIFwi5rCR5ZyLMTk2NOW5tFwiIFwi5rCR5ZyLMTk2NOW5tFwiIFwi5rCR5ZyLMTk2NOW5tFwiIFwi5rCR5ZyLMTk2NOW5tFwiXG5bMzU3XSBcIuawkeWcizE5NjPlubRcIiBcIuawkeWcizE5NjPlubRcIiBcIuawkeWcizE5NjPlubRcIiBcIuawkeWcizE5NjPlubRcIlxuWzM2MV0gXCLmsJHlnIsxOTYz5bm0XCIgXCLmsJHlnIsxOTYz5bm0XCIgXCLmsJHlnIsxOTYz5bm0XCIgXCLmsJHlnIsxOTYy5bm0XCJcblszNjVdIFwi5rCR5ZyLMTk2MuW5tFwiIFwi5rCR5ZyLMTk2MuW5tFwiIFwi5rCR5ZyLMTk2MuW5tFwiIFwi5rCR5ZyLMTk2MuW5tFwiXG5bMzY5XSBcIuawkeWcizE5NjLlubRcIiBcIuawkeWcizE5NjLlubRcIiBcIuawkeWcizE5NjLlubRcIiBcIuawkeWcizE5NjLlubRcIlxuWzM3M10gXCLmsJHlnIsxOTYy5bm0XCIgXCLmsJHlnIsxOTYy5bm0XCIgXCLmsJHlnIsxOTYy5bm0XCIgXCLmsJHlnIsxOTYy5bm0XCJcblszNzddIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiXG5bMzgxXSBcIuawkeWcizE5NjHlubRcIiBcIuawkeWcizE5NjHlubRcIiBcIuawkeWcizE5NjHlubRcIiBcIuawkeWcizE5NjHlubRcIlxuWzM4NV0gXCLmsJHlnIsxOTYx5bm0XCIgXCLmsJHlnIsxOTYx5bm0XCIgXCLmsJHlnIsxOTYx5bm0XCIgXCLmsJHlnIsxOTYx5bm0XCJcblszODldIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiIFwi5rCR5ZyLMTk2MeW5tFwiXG5bMzkzXSBcIuawkeWcizE5NjDlubRcIiBcIuawkeWcizE5NjDlubRcIiBcIuawkeWcizE5NjDlubRcIiBcIuawkeWcizE5NjDlubRcIlxuWzM5N10gXCLmsJHlnIsxOTYw5bm0XCIgXCLmsJHlnIsxOTYw5bm0XCIgXCLmsJHlnIsxOTYw5bm0XCIgXCLmsJHlnIsxOTYw5bm0XCJcbls0MDFdIFwi5rCR5ZyLMTk2MOW5tFwiIFwi5rCR5ZyLMTk2MOW5tFwiIFwi5rCR5ZyLMTk2MOW5tFwiIFwi5rCR5ZyLMTk2MOW5tFwiXG5bNDA1XSBcIuawkeWcizE5NjDlubRcIiBcIuawkeWcizE5NjDlubRcIiBcIuawkeWcizE5NTnlubRcIiBcIuawkeWcizE5NTnlubRcIlxuWzQwOV0gXCLmsJHlnIsxOTU55bm0XCIgXCLmsJHlnIsxOTU55bm0XCIgXCLmsJHlnIsxOTU55bm0XCIgXCLmsJHlnIsxOTU55bm0XCJcbls0MTNdIFwi5rCR5ZyLMTk1OeW5tFwiIFwi5rCR5ZyLMTk1OeW5tFwiIFwi5rCR5ZyLMTk1OeW5tFwiIFwi5rCR5ZyLMTk1OeW5tFwiXG5bNDE3XSBcIuawkeWcizE5NTnlubRcIiBcIuawkeWcizE5NTnlubRcIiBcIuawkeWcizE5NTnlubRcIiBcIuawkeWcizE5NTnlubRcIlxuWzQyMV0gXCLmsJHlnIsxOTU55bm0XCIgXCLmsJHlnIsxOTU45bm0XCIgXCLmsJHlnIsxOTU45bm0XCIgXCLmsJHlnIsxOTU45bm0XCJcbls0MjVdIFwi5rCR5ZyLMTk1OOW5tFwiIFwi5rCR5ZyLMTk1OOW5tFwiXG4ifQ== -->
-<pre><code>  [1] &quot;民國2018年&quot; &quot;民國2018年&quot; &quot;民國2017年&quot; &quot;民國2017年&quot;
-  [5] &quot;民國2017年&quot; &quot;民國2017年&quot; &quot;民國2017年&quot; &quot;民國2016年&quot;
-  [9] &quot;民國2016年&quot; &quot;民國2016年&quot; &quot;民國2016年&quot; &quot;民國2016年&quot;
- [13] &quot;民國2015年&quot; &quot;民國2015年&quot; &quot;民國2015年&quot; &quot;民國2015年&quot;
- [17] &quot;民國2015年&quot; &quot;民國2015年&quot; &quot;民國2014年&quot; &quot;民國2014年&quot;
- [21] &quot;民國2014年&quot; &quot;民國2013年&quot; &quot;民國2013年&quot; &quot;民國2013年&quot;
- [25] &quot;民國2013年&quot; &quot;民國2013年&quot; &quot;民國2013年&quot; &quot;民國2012年&quot;
- [29] &quot;民國2012年&quot; &quot;民國2012年&quot; &quot;民國2012年&quot; &quot;民國2012年&quot;
- [33] &quot;民國2012年&quot; &quot;民國2012年&quot; &quot;民國2012年&quot; &quot;民國2011年&quot;
- [37] &quot;民國2011年&quot; &quot;民國2011年&quot; &quot;民國2011年&quot; &quot;民國2011年&quot;
- [41] &quot;民國2010年&quot; &quot;民國2010年&quot; &quot;民國2010年&quot; &quot;民國2010年&quot;
- [45] &quot;民國2010年&quot; &quot;民國2009年&quot; &quot;民國2009年&quot; &quot;民國2009年&quot;
- [49] &quot;民國2009年&quot; &quot;民國2008年&quot; &quot;民國2008年&quot; &quot;民國2008年&quot;
- [53] &quot;民國2008年&quot; &quot;民國2008年&quot; &quot;民國2008年&quot; &quot;民國2007年&quot;
- [57] &quot;民國2007年&quot; &quot;民國2007年&quot; &quot;民國2007年&quot; &quot;民國2007年&quot;
- [61] &quot;民國2007年&quot; &quot;民國2006年&quot; &quot;民國2006年&quot; &quot;民國2006年&quot;
- [65] &quot;民國2006年&quot; &quot;民國2006年&quot; &quot;民國2006年&quot; &quot;民國2006年&quot;
- [69] &quot;民國2005年&quot; &quot;民國2005年&quot; &quot;民國2005年&quot; &quot;民國2005年&quot;
- [73] &quot;民國2005年&quot; &quot;民國2005年&quot; &quot;民國2005年&quot; &quot;民國2004年&quot;
- [77] &quot;民國2004年&quot; &quot;民國2004年&quot; &quot;民國2004年&quot; &quot;民國2004年&quot;
- [81] &quot;民國2004年&quot; &quot;民國2004年&quot; &quot;民國2004年&quot; &quot;民國2004年&quot;
- [85] &quot;民國2003年&quot; &quot;民國2003年&quot; &quot;民國2003年&quot; &quot;民國2003年&quot;
- [89] &quot;民國2003年&quot; &quot;民國2003年&quot; &quot;民國2003年&quot; &quot;民國2003年&quot;
- [93] &quot;民國2003年&quot; &quot;民國2002年&quot; &quot;民國2002年&quot; &quot;民國2002年&quot;
- [97] &quot;民國2001年&quot; &quot;民國2001年&quot; &quot;民國2001年&quot; &quot;民國2001年&quot;
-[101] &quot;民國2001年&quot; &quot;民國2001年&quot; &quot;民國2001年&quot; &quot;民國2001年&quot;
-[105] &quot;民國2001年&quot; &quot;民國2001年&quot; &quot;民國2000年&quot; &quot;民國2000年&quot;
-[109] &quot;民國2000年&quot; &quot;民國2000年&quot; &quot;民國2000年&quot; &quot;民國2000年&quot;
-[113] &quot;民國2000年&quot; &quot;民國1999年&quot; &quot;民國1999年&quot; &quot;民國1999年&quot;
-[117] &quot;民國1998年&quot; &quot;民國1998年&quot; &quot;民國1998年&quot; &quot;民國1998年&quot;
-[121] &quot;民國1998年&quot; &quot;民國1997年&quot; &quot;民國1997年&quot; &quot;民國1997年&quot;
-[125] &quot;民國1997年&quot; &quot;民國1996年&quot; &quot;民國1996年&quot; &quot;民國1996年&quot;
-[129] &quot;民國1996年&quot; &quot;民國1996年&quot; &quot;民國1996年&quot; &quot;民國1996年&quot;
-[133] &quot;民國1995年&quot; &quot;民國1995年&quot; &quot;民國1995年&quot; &quot;民國1995年&quot;
-[137] &quot;民國1995年&quot; &quot;民國1995年&quot; &quot;民國1994年&quot; &quot;民國1994年&quot;
-[141] &quot;民國1994年&quot; &quot;民國1994年&quot; &quot;民國1994年&quot; &quot;民國1994年&quot;
-[145] &quot;民國1993年&quot; &quot;民國1993年&quot; &quot;民國1993年&quot; &quot;民國1992年&quot;
-[149] &quot;民國1992年&quot; &quot;民國1992年&quot; &quot;民國1992年&quot; &quot;民國1992年&quot;
-[153] &quot;民國1991年&quot; &quot;民國1991年&quot; &quot;民國1991年&quot; &quot;民國1991年&quot;
-[157] &quot;民國1991年&quot; &quot;民國1991年&quot; &quot;民國1991年&quot; &quot;民國1991年&quot;
-[161] &quot;民國1990年&quot; &quot;民國1990年&quot; &quot;民國1990年&quot; &quot;民國1990年&quot;
-[165] &quot;民國1990年&quot; &quot;民國1990年&quot; &quot;民國1990年&quot; &quot;民國1990年&quot;
-[169] &quot;民國1990年&quot; &quot;民國1989年&quot; &quot;民國1989年&quot; &quot;民國1989年&quot;
-[173] &quot;民國1989年&quot; &quot;民國1989年&quot; &quot;民國1989年&quot; &quot;民國1989年&quot;
-[177] &quot;民國1988年&quot; &quot;民國1988年&quot; &quot;民國1988年&quot; &quot;民國1988年&quot;
-[181] &quot;民國1988年&quot; &quot;民國1988年&quot; &quot;民國1988年&quot; &quot;民國1988年&quot;
-[185] &quot;民國1987年&quot; &quot;民國1987年&quot; &quot;民國1987年&quot; &quot;民國1987年&quot;
-[189] &quot;民國1987年&quot; &quot;民國1987年&quot; &quot;民國1987年&quot; &quot;民國1986年&quot;
-[193] &quot;民國1986年&quot; &quot;民國1986年&quot; &quot;民國1986年&quot; &quot;民國1986年&quot;
-[197] &quot;民國1986年&quot; &quot;民國1986年&quot; &quot;民國1986年&quot; &quot;民國1986年&quot;
-[201] &quot;民國1985年&quot; &quot;民國1985年&quot; &quot;民國1985年&quot; &quot;民國1985年&quot;
-[205] &quot;民國1985年&quot; &quot;民國1985年&quot; &quot;民國1985年&quot; &quot;民國1984年&quot;
-[209] &quot;民國1984年&quot; &quot;民國1984年&quot; &quot;民國1984年&quot; &quot;民國1984年&quot;
-[213] &quot;民國1984年&quot; &quot;民國1984年&quot; &quot;民國1983年&quot; &quot;民國1983年&quot;
-[217] &quot;民國1983年&quot; &quot;民國1983年&quot; &quot;民國1982年&quot; &quot;民國1982年&quot;
-[221] &quot;民國1982年&quot; &quot;民國1982年&quot; &quot;民國1982年&quot; &quot;民國1982年&quot;
-[225] &quot;民國1982年&quot; &quot;民國1981年&quot; &quot;民國1981年&quot; &quot;民國1981年&quot;
-[229] &quot;民國1981年&quot; &quot;民國1981年&quot; &quot;民國1981年&quot; &quot;民國1981年&quot;
-[233] &quot;民國1980年&quot; &quot;民國1980年&quot; &quot;民國1980年&quot; &quot;民國1980年&quot;
-[237] &quot;民國1980年&quot; &quot;民國1980年&quot; &quot;民國1980年&quot; &quot;民國1979年&quot;
-[241] &quot;民國1979年&quot; &quot;民國1979年&quot; &quot;民國1979年&quot; &quot;民國1979年&quot;
-[245] &quot;民國1979年&quot; &quot;民國1979年&quot; &quot;民國1978年&quot; &quot;民國1978年&quot;
-[249] &quot;民國1978年&quot; &quot;民國1978年&quot; &quot;民國1978年&quot; &quot;民國1978年&quot;
-[253] &quot;民國1977年&quot; &quot;民國1977年&quot; &quot;民國1977年&quot; &quot;民國1977年&quot;
-[257] &quot;民國1977年&quot; &quot;民國1977年&quot; &quot;民國1977年&quot; &quot;民國1977年&quot;
-[261] &quot;民國1976年&quot; &quot;民國1976年&quot; &quot;民國1976年&quot; &quot;民國1976年&quot;
-[265] &quot;民國1976年&quot; &quot;民國1976年&quot; &quot;民國1976年&quot; &quot;民國1975年&quot;
-[269] &quot;民國1975年&quot; &quot;民國1975年&quot; &quot;民國1975年&quot; &quot;民國1975年&quot;
-[273] &quot;民國1974年&quot; &quot;民國1974年&quot; &quot;民國1974年&quot; &quot;民國1974年&quot;
-[277] &quot;民國1974年&quot; &quot;民國1974年&quot; &quot;民國1974年&quot; &quot;民國1974年&quot;
-[281] &quot;民國1973年&quot; &quot;民國1973年&quot; &quot;民國1973年&quot; &quot;民國1973年&quot;
-[285] &quot;民國1973年&quot; &quot;民國1973年&quot; &quot;民國1972年&quot; &quot;民國1972年&quot;
-[289] &quot;民國1972年&quot; &quot;民國1972年&quot; &quot;民國1971年&quot; &quot;民國1971年&quot;
-[293] &quot;民國1971年&quot; &quot;民國1971年&quot; &quot;民國1971年&quot; &quot;民國1970年&quot;
-[297] &quot;民國1970年&quot; &quot;民國1970年&quot; &quot;民國1969年&quot; &quot;民國1969年&quot;
-[301] &quot;民國1969年&quot; &quot;民國1969年&quot; &quot;民國1969年&quot; &quot;民國1969年&quot;
-[305] &quot;民國1968年&quot; &quot;民國1968年&quot; &quot;民國1968年&quot; &quot;民國1968年&quot;
-[309] &quot;民國1968年&quot; &quot;民國1968年&quot; &quot;民國1968年&quot; &quot;民國1968年&quot;
-[313] &quot;民國1967年&quot; &quot;民國1967年&quot; &quot;民國1967年&quot; &quot;民國1967年&quot;
-[317] &quot;民國1967年&quot; &quot;民國1967年&quot; &quot;民國1967年&quot; &quot;民國1967年&quot;
-[321] &quot;民國1967年&quot; &quot;民國1966年&quot; &quot;民國1966年&quot; &quot;民國1966年&quot;
-[325] &quot;民國1966年&quot; &quot;民國1966年&quot; &quot;民國1966年&quot; &quot;民國1966年&quot;
-[329] &quot;民國1966年&quot; &quot;民國1966年&quot; &quot;民國1966年&quot; &quot;民國1965年&quot;
-[333] &quot;民國1965年&quot; &quot;民國1965年&quot; &quot;民國1965年&quot; &quot;民國1965年&quot;
-[337] &quot;民國1965年&quot; &quot;民國1965年&quot; &quot;民國1965年&quot; &quot;民國1965年&quot;
-[341] &quot;民國1965年&quot; &quot;民國1965年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot;
-[345] &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot;
-[349] &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot;
-[353] &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot; &quot;民國1964年&quot;
-[357] &quot;民國1963年&quot; &quot;民國1963年&quot; &quot;民國1963年&quot; &quot;民國1963年&quot;
-[361] &quot;民國1963年&quot; &quot;民國1963年&quot; &quot;民國1963年&quot; &quot;民國1962年&quot;
-[365] &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot;
-[369] &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot;
-[373] &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot; &quot;民國1962年&quot;
-[377] &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot;
-[381] &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot;
-[385] &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot;
-[389] &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot; &quot;民國1961年&quot;
-[393] &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot;
-[397] &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot;
-[401] &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1960年&quot;
-[405] &quot;民國1960年&quot; &quot;民國1960年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot;
-[409] &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot;
-[413] &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot;
-[417] &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot; &quot;民國1959年&quot;
-[421] &quot;民國1959年&quot; &quot;民國1958年&quot; &quot;民國1958年&quot; &quot;民國1958年&quot;
-[425] &quot;民國1958年&quot; &quot;民國1958年&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCLmsJHlnIsxMDflubRcIiBcIuawkeWcizEwN+W5tFwiIFwi5rCR5ZyLMTA25bm0XCIgXCLmsJHlnIsxMDblubRcIiBcIuawkeWcizEwNuW5tFwiIFwi5rCR5ZyLMTA25bm0XCJcbiAgWzddIFwi5rCR5ZyLMTA25bm0XCIgXCLmsJHlnIsxMDXlubRcIiBcIuawkeWcizEwNeW5tFwiIFwi5rCR5ZyLMTA15bm0XCIgXCLmsJHlnIsxMDXlubRcIiBcIuawkeWcizEwNeW5tFwiXG4gWzEzXSBcIuawkeWcizEwNOW5tFwiIFwi5rCR5ZyLMTA05bm0XCIgXCLmsJHlnIsxMDTlubRcIiBcIuawkeWcizEwNOW5tFwiIFwi5rCR5ZyLMTA05bm0XCIgXCLmsJHlnIsxMDTlubRcIlxuIFsxOV0gXCLmsJHlnIsxMDPlubRcIiBcIuawkeWcizEwM+W5tFwiIFwi5rCR5ZyLMTAz5bm0XCIgXCLmsJHlnIsxMDLlubRcIiBcIuawkeWcizEwMuW5tFwiIFwi5rCR5ZyLMTAy5bm0XCJcbiBbMjVdIFwi5rCR5ZyLMTAy5bm0XCIgXCLmsJHlnIsxMDLlubRcIiBcIuawkeWcizEwMuW5tFwiIFwi5rCR5ZyLMTAx5bm0XCIgXCLmsJHlnIsxMDHlubRcIiBcIuawkeWcizEwMeW5tFwiXG4gWzMxXSBcIuawkeWcizEwMeW5tFwiIFwi5rCR5ZyLMTAx5bm0XCIgXCLmsJHlnIsxMDHlubRcIiBcIuawkeWcizEwMeW5tFwiIFwi5rCR5ZyLMTAx5bm0XCIgXCLmsJHlnIsxMDDlubRcIlxuIFszN10gXCLmsJHlnIsxMDDlubRcIiBcIuawkeWcizEwMOW5tFwiIFwi5rCR5ZyLMTAw5bm0XCIgXCLmsJHlnIsxMDDlubRcIiBcIuawkeWcizk55bm0XCIgIFwi5rCR5ZyLOTnlubRcIiBcbiBbNDNdIFwi5rCR5ZyLOTnlubRcIiAgXCLmsJHlnIs5OeW5tFwiICBcIuawkeWcizk55bm0XCIgIFwi5rCR5ZyLOTjlubRcIiAgXCLmsJHlnIs5OOW5tFwiICBcIuawkeWcizk45bm0XCIgXG4gWzQ5XSBcIuawkeWcizk45bm0XCIgIFwi5rCR5ZyLOTflubRcIiAgXCLmsJHlnIs5N+W5tFwiICBcIuawkeWcizk35bm0XCIgIFwi5rCR5ZyLOTflubRcIiAgXCLmsJHlnIs5N+W5tFwiIFxuIFs1NV0gXCLmsJHlnIs5N+W5tFwiICBcIuawkeWcizk25bm0XCIgIFwi5rCR5ZyLOTblubRcIiAgXCLmsJHlnIs5NuW5tFwiICBcIuawkeWcizk25bm0XCIgIFwi5rCR5ZyLOTblubRcIiBcbiBbNjFdIFwi5rCR5ZyLOTblubRcIiAgXCLmsJHlnIs5NeW5tFwiICBcIuawkeWcizk15bm0XCIgIFwi5rCR5ZyLOTXlubRcIiAgXCLmsJHlnIs5NeW5tFwiICBcIuawkeWcizk15bm0XCIgXG4gWzY3XSBcIuawkeWcizk15bm0XCIgIFwi5rCR5ZyLOTXlubRcIiAgXCLmsJHlnIs5NOW5tFwiICBcIuawkeWcizk05bm0XCIgIFwi5rCR5ZyLOTTlubRcIiAgXCLmsJHlnIs5NOW5tFwiIFxuIFs3M10gXCLmsJHlnIs5NOW5tFwiICBcIuawkeWcizk05bm0XCIgIFwi5rCR5ZyLOTTlubRcIiAgXCLmsJHlnIs5M+W5tFwiICBcIuawkeWcizkz5bm0XCIgIFwi5rCR5ZyLOTPlubRcIiBcbiBbNzldIFwi5rCR5ZyLOTPlubRcIiAgXCLmsJHlnIs5M+W5tFwiICBcIuawkeWcizkz5bm0XCIgIFwi5rCR5ZyLOTPlubRcIiAgXCLmsJHlnIs5M+W5tFwiICBcIuawkeWcizkz5bm0XCIgXG4gWzg1XSBcIuawkeWcizky5bm0XCIgIFwi5rCR5ZyLOTLlubRcIiAgXCLmsJHlnIs5MuW5tFwiICBcIuawkeWcizky5bm0XCIgIFwi5rCR5ZyLOTLlubRcIiAgXCLmsJHlnIs5MuW5tFwiIFxuIFs5MV0gXCLmsJHlnIs5MuW5tFwiICBcIuawkeWcizky5bm0XCIgIFwi5rCR5ZyLOTLlubRcIiAgXCLmsJHlnIs5MeW5tFwiICBcIuawkeWcizkx5bm0XCIgIFwi5rCR5ZyLOTHlubRcIiBcbiBbOTddIFwi5rCR5ZyLOTDlubRcIiAgXCLmsJHlnIs5MOW5tFwiICBcIuawkeWcizkw5bm0XCIgIFwi5rCR5ZyLOTDlubRcIiAgXCLmsJHlnIs5MOW5tFwiICBcIuawkeWcizkw5bm0XCIgXG5bMTAzXSBcIuawkeWcizkw5bm0XCIgIFwi5rCR5ZyLOTDlubRcIiAgXCLmsJHlnIs5MOW5tFwiICBcIuawkeWcizkw5bm0XCIgIFwi5rCR5ZyLODnlubRcIiAgXCLmsJHlnIs4OeW5tFwiIFxuWzEwOV0gXCLmsJHlnIs4OeW5tFwiICBcIuawkeWcizg55bm0XCIgIFwi5rCR5ZyLODnlubRcIiAgXCLmsJHlnIs4OeW5tFwiICBcIuawkeWcizg55bm0XCIgIFwi5rCR5ZyLODjlubRcIiBcblsxMTVdIFwi5rCR5ZyLODjlubRcIiAgXCLmsJHlnIs4OOW5tFwiICBcIuawkeWcizg35bm0XCIgIFwi5rCR5ZyLODflubRcIiAgXCLmsJHlnIs4N+W5tFwiICBcIuawkeWcizg35bm0XCIgXG5bMTIxXSBcIuawkeWcizg35bm0XCIgIFwi5rCR5ZyLODblubRcIiAgXCLmsJHlnIs4NuW5tFwiICBcIuawkeWcizg25bm0XCIgIFwi5rCR5ZyLODblubRcIiAgXCLmsJHlnIs4NeW5tFwiIFxuWzEyN10gXCLmsJHlnIs4NeW5tFwiICBcIuawkeWcizg15bm0XCIgIFwi5rCR5ZyLODXlubRcIiAgXCLmsJHlnIs4NeW5tFwiICBcIuawkeWcizg15bm0XCIgIFwi5rCR5ZyLODXlubRcIiBcblsxMzNdIFwi5rCR5ZyLODTlubRcIiAgXCLmsJHlnIs4NOW5tFwiICBcIuawkeWcizg05bm0XCIgIFwi5rCR5ZyLODTlubRcIiAgXCLmsJHlnIs4NOW5tFwiICBcIuawkeWcizg05bm0XCIgXG5bMTM5XSBcIuawkeWcizgz5bm0XCIgIFwi5rCR5ZyLODPlubRcIiAgXCLmsJHlnIs4M+W5tFwiICBcIuawkeWcizgz5bm0XCIgIFwi5rCR5ZyLODPlubRcIiAgXCLmsJHlnIs4M+W5tFwiIFxuWzE0NV0gXCLmsJHlnIs4MuW5tFwiICBcIuawkeWcizgy5bm0XCIgIFwi5rCR5ZyLODLlubRcIiAgXCLmsJHlnIs4MeW5tFwiICBcIuawkeWcizgx5bm0XCIgIFwi5rCR5ZyLODHlubRcIiBcblsxNTFdIFwi5rCR5ZyLODHlubRcIiAgXCLmsJHlnIs4MeW5tFwiICBcIuawkeWcizgw5bm0XCIgIFwi5rCR5ZyLODDlubRcIiAgXCLmsJHlnIs4MOW5tFwiICBcIuawkeWcizgw5bm0XCIgXG5bMTU3XSBcIuawkeWcizgw5bm0XCIgIFwi5rCR5ZyLODDlubRcIiAgXCLmsJHlnIs4MOW5tFwiICBcIuawkeWcizgw5bm0XCIgIFwi5rCR5ZyLNznlubRcIiAgXCLmsJHlnIs3OeW5tFwiIFxuWzE2M10gXCLmsJHlnIs3OeW5tFwiICBcIuawkeWcizc55bm0XCIgIFwi5rCR5ZyLNznlubRcIiAgXCLmsJHlnIs3OeW5tFwiICBcIuawkeWcizc55bm0XCIgIFwi5rCR5ZyLNznlubRcIiBcblsxNjldIFwi5rCR5ZyLNznlubRcIiAgXCLmsJHlnIs3OOW5tFwiICBcIuawkeWcizc45bm0XCIgIFwi5rCR5ZyLNzjlubRcIiAgXCLmsJHlnIs3OOW5tFwiICBcIuawkeWcizc45bm0XCIgXG5bMTc1XSBcIuawkeWcizc45bm0XCIgIFwi5rCR5ZyLNzjlubRcIiAgXCLmsJHlnIs3N+W5tFwiICBcIuawkeWcizc35bm0XCIgIFwi5rCR5ZyLNzflubRcIiAgXCLmsJHlnIs3N+W5tFwiIFxuWzE4MV0gXCLmsJHlnIs3N+W5tFwiICBcIuawkeWcizc35bm0XCIgIFwi5rCR5ZyLNzflubRcIiAgXCLmsJHlnIs3N+W5tFwiICBcIuawkeWcizc25bm0XCIgIFwi5rCR5ZyLNzblubRcIiBcblsxODddIFwi5rCR5ZyLNzblubRcIiAgXCLmsJHlnIs3NuW5tFwiICBcIuawkeWcizc25bm0XCIgIFwi5rCR5ZyLNzblubRcIiAgXCLmsJHlnIs3NuW5tFwiICBcIuawkeWcizc15bm0XCIgXG5bMTkzXSBcIuawkeWcizc15bm0XCIgIFwi5rCR5ZyLNzXlubRcIiAgXCLmsJHlnIs3NeW5tFwiICBcIuawkeWcizc15bm0XCIgIFwi5rCR5ZyLNzXlubRcIiAgXCLmsJHlnIs3NeW5tFwiIFxuWzE5OV0gXCLmsJHlnIs3NeW5tFwiICBcIuawkeWcizc15bm0XCIgIFwi5rCR5ZyLNzTlubRcIiAgXCLmsJHlnIs3NOW5tFwiICBcIuawkeWcizc05bm0XCIgIFwi5rCR5ZyLNzTlubRcIiBcblsyMDVdIFwi5rCR5ZyLNzTlubRcIiAgXCLmsJHlnIs3NOW5tFwiICBcIuawkeWcizc05bm0XCIgIFwi5rCR5ZyLNzPlubRcIiAgXCLmsJHlnIs3M+W5tFwiICBcIuawkeWcizcz5bm0XCIgXG5bMjExXSBcIuawkeWcizcz5bm0XCIgIFwi5rCR5ZyLNzPlubRcIiAgXCLmsJHlnIs3M+W5tFwiICBcIuawkeWcizcz5bm0XCIgIFwi5rCR5ZyLNzLlubRcIiAgXCLmsJHlnIs3MuW5tFwiIFxuWzIxN10gXCLmsJHlnIs3MuW5tFwiICBcIuawkeWcizcy5bm0XCIgIFwi5rCR5ZyLNzHlubRcIiAgXCLmsJHlnIs3MeW5tFwiICBcIuawkeWcizcx5bm0XCIgIFwi5rCR5ZyLNzHlubRcIiBcblsyMjNdIFwi5rCR5ZyLNzHlubRcIiAgXCLmsJHlnIs3MeW5tFwiICBcIuawkeWcizcx5bm0XCIgIFwi5rCR5ZyLNzDlubRcIiAgXCLmsJHlnIs3MOW5tFwiICBcIuawkeWcizcw5bm0XCIgXG5bMjI5XSBcIuawkeWcizcw5bm0XCIgIFwi5rCR5ZyLNzDlubRcIiAgXCLmsJHlnIs3MOW5tFwiICBcIuawkeWcizcw5bm0XCIgIFwi5rCR5ZyLNjnlubRcIiAgXCLmsJHlnIs2OeW5tFwiIFxuWzIzNV0gXCLmsJHlnIs2OeW5tFwiICBcIuawkeWcizY55bm0XCIgIFwi5rCR5ZyLNjnlubRcIiAgXCLmsJHlnIs2OeW5tFwiICBcIuawkeWcizY55bm0XCIgIFwi5rCR5ZyLNjjlubRcIiBcblsyNDFdIFwi5rCR5ZyLNjjlubRcIiAgXCLmsJHlnIs2OOW5tFwiICBcIuawkeWcizY45bm0XCIgIFwi5rCR5ZyLNjjlubRcIiAgXCLmsJHlnIs2OOW5tFwiICBcIuawkeWcizY45bm0XCIgXG5bMjQ3XSBcIuawkeWcizY35bm0XCIgIFwi5rCR5ZyLNjflubRcIiAgXCLmsJHlnIs2N+W5tFwiICBcIuawkeWcizY35bm0XCIgIFwi5rCR5ZyLNjflubRcIiAgXCLmsJHlnIs2N+W5tFwiIFxuWzI1M10gXCLmsJHlnIs2NuW5tFwiICBcIuawkeWcizY25bm0XCIgIFwi5rCR5ZyLNjblubRcIiAgXCLmsJHlnIs2NuW5tFwiICBcIuawkeWcizY25bm0XCIgIFwi5rCR5ZyLNjblubRcIiBcblsyNTldIFwi5rCR5ZyLNjblubRcIiAgXCLmsJHlnIs2NuW5tFwiICBcIuawkeWcizY15bm0XCIgIFwi5rCR5ZyLNjXlubRcIiAgXCLmsJHlnIs2NeW5tFwiICBcIuawkeWcizY15bm0XCIgXG5bMjY1XSBcIuawkeWcizY15bm0XCIgIFwi5rCR5ZyLNjXlubRcIiAgXCLmsJHlnIs2NeW5tFwiICBcIuawkeWcizY05bm0XCIgIFwi5rCR5ZyLNjTlubRcIiAgXCLmsJHlnIs2NOW5tFwiIFxuWzI3MV0gXCLmsJHlnIs2NOW5tFwiICBcIuawkeWcizY05bm0XCIgIFwi5rCR5ZyLNjPlubRcIiAgXCLmsJHlnIs2M+W5tFwiICBcIuawkeWcizYz5bm0XCIgIFwi5rCR5ZyLNjPlubRcIiBcblsyNzddIFwi5rCR5ZyLNjPlubRcIiAgXCLmsJHlnIs2M+W5tFwiICBcIuawkeWcizYz5bm0XCIgIFwi5rCR5ZyLNjPlubRcIiAgXCLmsJHlnIs2MuW5tFwiICBcIuawkeWcizYy5bm0XCIgXG5bMjgzXSBcIuawkeWcizYy5bm0XCIgIFwi5rCR5ZyLNjLlubRcIiAgXCLmsJHlnIs2MuW5tFwiICBcIuawkeWcizYy5bm0XCIgIFwi5rCR5ZyLNjHlubRcIiAgXCLmsJHlnIs2MeW5tFwiIFxuWzI4OV0gXCLmsJHlnIs2MeW5tFwiICBcIuawkeWcizYx5bm0XCIgIFwi5rCR5ZyLNjDlubRcIiAgXCLmsJHlnIs2MOW5tFwiICBcIuawkeWcizYw5bm0XCIgIFwi5rCR5ZyLNjDlubRcIiBcblsyOTVdIFwi5rCR5ZyLNjDlubRcIiAgXCLmsJHlnIs1OeW5tFwiICBcIuawkeWcizU55bm0XCIgIFwi5rCR5ZyLNTnlubRcIiAgXCLmsJHlnIs1OOW5tFwiICBcIuawkeWcizU45bm0XCIgXG5bMzAxXSBcIuawkeWcizU45bm0XCIgIFwi5rCR5ZyLNTjlubRcIiAgXCLmsJHlnIs1OOW5tFwiICBcIuawkeWcizU45bm0XCIgIFwi5rCR5ZyLNTflubRcIiAgXCLmsJHlnIs1N+W5tFwiIFxuWzMwN10gXCLmsJHlnIs1N+W5tFwiICBcIuawkeWcizU35bm0XCIgIFwi5rCR5ZyLNTflubRcIiAgXCLmsJHlnIs1N+W5tFwiICBcIuawkeWcizU35bm0XCIgIFwi5rCR5ZyLNTflubRcIiBcblszMTNdIFwi5rCR5ZyLNTblubRcIiAgXCLmsJHlnIs1NuW5tFwiICBcIuawkeWcizU25bm0XCIgIFwi5rCR5ZyLNTblubRcIiAgXCLmsJHlnIs1NuW5tFwiICBcIuawkeWcizU25bm0XCIgXG5bMzE5XSBcIuawkeWcizU25bm0XCIgIFwi5rCR5ZyLNTblubRcIiAgXCLmsJHlnIs1NuW5tFwiICBcIuawkeWcizU15bm0XCIgIFwi5rCR5ZyLNTXlubRcIiAgXCLmsJHlnIs1NeW5tFwiIFxuWzMyNV0gXCLmsJHlnIs1NeW5tFwiICBcIuawkeWcizU15bm0XCIgIFwi5rCR5ZyLNTXlubRcIiAgXCLmsJHlnIs1NeW5tFwiICBcIuawkeWcizU15bm0XCIgIFwi5rCR5ZyLNTXlubRcIiBcblszMzFdIFwi5rCR5ZyLNTXlubRcIiAgXCLmsJHlnIs1NOW5tFwiICBcIuawkeWcizU05bm0XCIgIFwi5rCR5ZyLNTTlubRcIiAgXCLmsJHlnIs1NOW5tFwiICBcIuawkeWcizU05bm0XCIgXG5bMzM3XSBcIuawkeWcizU05bm0XCIgIFwi5rCR5ZyLNTTlubRcIiAgXCLmsJHlnIs1NOW5tFwiICBcIuawkeWcizU05bm0XCIgIFwi5rCR5ZyLNTTlubRcIiAgXCLmsJHlnIs1NOW5tFwiIFxuWzM0M10gXCLmsJHlnIs1M+W5tFwiICBcIuawkeWcizUz5bm0XCIgIFwi5rCR5ZyLNTPlubRcIiAgXCLmsJHlnIs1M+W5tFwiICBcIuawkeWcizUz5bm0XCIgIFwi5rCR5ZyLNTPlubRcIiBcblszNDldIFwi5rCR5ZyLNTPlubRcIiAgXCLmsJHlnIs1M+W5tFwiICBcIuawkeWcizUz5bm0XCIgIFwi5rCR5ZyLNTPlubRcIiAgXCLmsJHlnIs1M+W5tFwiICBcIuawkeWcizUz5bm0XCIgXG5bMzU1XSBcIuawkeWcizUz5bm0XCIgIFwi5rCR5ZyLNTPlubRcIiAgXCLmsJHlnIs1MuW5tFwiICBcIuawkeWcizUy5bm0XCIgIFwi5rCR5ZyLNTLlubRcIiAgXCLmsJHlnIs1MuW5tFwiIFxuWzM2MV0gXCLmsJHlnIs1MuW5tFwiICBcIuawkeWcizUy5bm0XCIgIFwi5rCR5ZyLNTLlubRcIiAgXCLmsJHlnIs1MeW5tFwiICBcIuawkeWcizUx5bm0XCIgIFwi5rCR5ZyLNTHlubRcIiBcblszNjddIFwi5rCR5ZyLNTHlubRcIiAgXCLmsJHlnIs1MeW5tFwiICBcIuawkeWcizUx5bm0XCIgIFwi5rCR5ZyLNTHlubRcIiAgXCLmsJHlnIs1MeW5tFwiICBcIuawkeWcizUx5bm0XCIgXG5bMzczXSBcIuawkeWcizUx5bm0XCIgIFwi5rCR5ZyLNTHlubRcIiAgXCLmsJHlnIs1MeW5tFwiICBcIuawkeWcizUx5bm0XCIgIFwi5rCR5ZyLNTDlubRcIiAgXCLmsJHlnIs1MOW5tFwiIFxuWzM3OV0gXCLmsJHlnIs1MOW5tFwiICBcIuawkeWcizUw5bm0XCIgIFwi5rCR5ZyLNTDlubRcIiAgXCLmsJHlnIs1MOW5tFwiICBcIuawkeWcizUw5bm0XCIgIFwi5rCR5ZyLNTDlubRcIiBcblszODVdIFwi5rCR5ZyLNTDlubRcIiAgXCLmsJHlnIs1MOW5tFwiICBcIuawkeWcizUw5bm0XCIgIFwi5rCR5ZyLNTDlubRcIiAgXCLmsJHlnIs1MOW5tFwiICBcIuawkeWcizUw5bm0XCIgXG5bMzkxXSBcIuawkeWcizUw5bm0XCIgIFwi5rCR5ZyLNTDlubRcIiAgXCLmsJHlnIs0OeW5tFwiICBcIuawkeWcizQ55bm0XCIgIFwi5rCR5ZyLNDnlubRcIiAgXCLmsJHlnIs0OeW5tFwiIFxuWzM5N10gXCLmsJHlnIs0OeW5tFwiICBcIuawkeWcizQ55bm0XCIgIFwi5rCR5ZyLNDnlubRcIiAgXCLmsJHlnIs0OeW5tFwiICBcIuawkeWcizQ55bm0XCIgIFwi5rCR5ZyLNDnlubRcIiBcbls0MDNdIFwi5rCR5ZyLNDnlubRcIiAgXCLmsJHlnIs0OeW5tFwiICBcIuawkeWcizQ55bm0XCIgIFwi5rCR5ZyLNDnlubRcIiAgXCLmsJHlnIs0OOW5tFwiICBcIuawkeWcizQ45bm0XCIgXG5bNDA5XSBcIuawkeWcizQ45bm0XCIgIFwi5rCR5ZyLNDjlubRcIiAgXCLmsJHlnIs0OOW5tFwiICBcIuawkeWcizQ45bm0XCIgIFwi5rCR5ZyLNDjlubRcIiAgXCLmsJHlnIs0OOW5tFwiIFxuWzQxNV0gXCLmsJHlnIs0OOW5tFwiICBcIuawkeWcizQ45bm0XCIgIFwi5rCR5ZyLNDjlubRcIiAgXCLmsJHlnIs0OOW5tFwiICBcIuawkeWcizQ45bm0XCIgIFwi5rCR5ZyLNDjlubRcIiBcbls0MjFdIFwi5rCR5ZyLNDjlubRcIiAgXCLmsJHlnIs0N+W5tFwiICBcIuawkeWcizQ35bm0XCIgIFwi5rCR5ZyLNDflubRcIiAgXCLmsJHlnIs0N+W5tFwiICBcIuawkeWcizQ35bm0XCIgXG4ifQ== -->
+<pre><code>  [1] &quot;民國107年&quot; &quot;民國107年&quot; &quot;民國106年&quot; &quot;民國106年&quot; &quot;民國106年&quot; &quot;民國106年&quot;
+  [7] &quot;民國106年&quot; &quot;民國105年&quot; &quot;民國105年&quot; &quot;民國105年&quot; &quot;民國105年&quot; &quot;民國105年&quot;
+ [13] &quot;民國104年&quot; &quot;民國104年&quot; &quot;民國104年&quot; &quot;民國104年&quot; &quot;民國104年&quot; &quot;民國104年&quot;
+ [19] &quot;民國103年&quot; &quot;民國103年&quot; &quot;民國103年&quot; &quot;民國102年&quot; &quot;民國102年&quot; &quot;民國102年&quot;
+ [25] &quot;民國102年&quot; &quot;民國102年&quot; &quot;民國102年&quot; &quot;民國101年&quot; &quot;民國101年&quot; &quot;民國101年&quot;
+ [31] &quot;民國101年&quot; &quot;民國101年&quot; &quot;民國101年&quot; &quot;民國101年&quot; &quot;民國101年&quot; &quot;民國100年&quot;
+ [37] &quot;民國100年&quot; &quot;民國100年&quot; &quot;民國100年&quot; &quot;民國100年&quot; &quot;民國99年&quot;  &quot;民國99年&quot; 
+ [43] &quot;民國99年&quot;  &quot;民國99年&quot;  &quot;民國99年&quot;  &quot;民國98年&quot;  &quot;民國98年&quot;  &quot;民國98年&quot; 
+ [49] &quot;民國98年&quot;  &quot;民國97年&quot;  &quot;民國97年&quot;  &quot;民國97年&quot;  &quot;民國97年&quot;  &quot;民國97年&quot; 
+ [55] &quot;民國97年&quot;  &quot;民國96年&quot;  &quot;民國96年&quot;  &quot;民國96年&quot;  &quot;民國96年&quot;  &quot;民國96年&quot; 
+ [61] &quot;民國96年&quot;  &quot;民國95年&quot;  &quot;民國95年&quot;  &quot;民國95年&quot;  &quot;民國95年&quot;  &quot;民國95年&quot; 
+ [67] &quot;民國95年&quot;  &quot;民國95年&quot;  &quot;民國94年&quot;  &quot;民國94年&quot;  &quot;民國94年&quot;  &quot;民國94年&quot; 
+ [73] &quot;民國94年&quot;  &quot;民國94年&quot;  &quot;民國94年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot; 
+ [79] &quot;民國93年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot;  &quot;民國93年&quot; 
+ [85] &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國92年&quot; 
+ [91] &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國92年&quot;  &quot;民國91年&quot;  &quot;民國91年&quot;  &quot;民國91年&quot; 
+ [97] &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot; 
+[103] &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國90年&quot;  &quot;民國89年&quot;  &quot;民國89年&quot; 
+[109] &quot;民國89年&quot;  &quot;民國89年&quot;  &quot;民國89年&quot;  &quot;民國89年&quot;  &quot;民國89年&quot;  &quot;民國88年&quot; 
+[115] &quot;民國88年&quot;  &quot;民國88年&quot;  &quot;民國87年&quot;  &quot;民國87年&quot;  &quot;民國87年&quot;  &quot;民國87年&quot; 
+[121] &quot;民國87年&quot;  &quot;民國86年&quot;  &quot;民國86年&quot;  &quot;民國86年&quot;  &quot;民國86年&quot;  &quot;民國85年&quot; 
+[127] &quot;民國85年&quot;  &quot;民國85年&quot;  &quot;民國85年&quot;  &quot;民國85年&quot;  &quot;民國85年&quot;  &quot;民國85年&quot; 
+[133] &quot;民國84年&quot;  &quot;民國84年&quot;  &quot;民國84年&quot;  &quot;民國84年&quot;  &quot;民國84年&quot;  &quot;民國84年&quot; 
+[139] &quot;民國83年&quot;  &quot;民國83年&quot;  &quot;民國83年&quot;  &quot;民國83年&quot;  &quot;民國83年&quot;  &quot;民國83年&quot; 
+[145] &quot;民國82年&quot;  &quot;民國82年&quot;  &quot;民國82年&quot;  &quot;民國81年&quot;  &quot;民國81年&quot;  &quot;民國81年&quot; 
+[151] &quot;民國81年&quot;  &quot;民國81年&quot;  &quot;民國80年&quot;  &quot;民國80年&quot;  &quot;民國80年&quot;  &quot;民國80年&quot; 
+[157] &quot;民國80年&quot;  &quot;民國80年&quot;  &quot;民國80年&quot;  &quot;民國80年&quot;  &quot;民國79年&quot;  &quot;民國79年&quot; 
+[163] &quot;民國79年&quot;  &quot;民國79年&quot;  &quot;民國79年&quot;  &quot;民國79年&quot;  &quot;民國79年&quot;  &quot;民國79年&quot; 
+[169] &quot;民國79年&quot;  &quot;民國78年&quot;  &quot;民國78年&quot;  &quot;民國78年&quot;  &quot;民國78年&quot;  &quot;民國78年&quot; 
+[175] &quot;民國78年&quot;  &quot;民國78年&quot;  &quot;民國77年&quot;  &quot;民國77年&quot;  &quot;民國77年&quot;  &quot;民國77年&quot; 
+[181] &quot;民國77年&quot;  &quot;民國77年&quot;  &quot;民國77年&quot;  &quot;民國77年&quot;  &quot;民國76年&quot;  &quot;民國76年&quot; 
+[187] &quot;民國76年&quot;  &quot;民國76年&quot;  &quot;民國76年&quot;  &quot;民國76年&quot;  &quot;民國76年&quot;  &quot;民國75年&quot; 
+[193] &quot;民國75年&quot;  &quot;民國75年&quot;  &quot;民國75年&quot;  &quot;民國75年&quot;  &quot;民國75年&quot;  &quot;民國75年&quot; 
+[199] &quot;民國75年&quot;  &quot;民國75年&quot;  &quot;民國74年&quot;  &quot;民國74年&quot;  &quot;民國74年&quot;  &quot;民國74年&quot; 
+[205] &quot;民國74年&quot;  &quot;民國74年&quot;  &quot;民國74年&quot;  &quot;民國73年&quot;  &quot;民國73年&quot;  &quot;民國73年&quot; 
+[211] &quot;民國73年&quot;  &quot;民國73年&quot;  &quot;民國73年&quot;  &quot;民國73年&quot;  &quot;民國72年&quot;  &quot;民國72年&quot; 
+[217] &quot;民國72年&quot;  &quot;民國72年&quot;  &quot;民國71年&quot;  &quot;民國71年&quot;  &quot;民國71年&quot;  &quot;民國71年&quot; 
+[223] &quot;民國71年&quot;  &quot;民國71年&quot;  &quot;民國71年&quot;  &quot;民國70年&quot;  &quot;民國70年&quot;  &quot;民國70年&quot; 
+[229] &quot;民國70年&quot;  &quot;民國70年&quot;  &quot;民國70年&quot;  &quot;民國70年&quot;  &quot;民國69年&quot;  &quot;民國69年&quot; 
+[235] &quot;民國69年&quot;  &quot;民國69年&quot;  &quot;民國69年&quot;  &quot;民國69年&quot;  &quot;民國69年&quot;  &quot;民國68年&quot; 
+[241] &quot;民國68年&quot;  &quot;民國68年&quot;  &quot;民國68年&quot;  &quot;民國68年&quot;  &quot;民國68年&quot;  &quot;民國68年&quot; 
+[247] &quot;民國67年&quot;  &quot;民國67年&quot;  &quot;民國67年&quot;  &quot;民國67年&quot;  &quot;民國67年&quot;  &quot;民國67年&quot; 
+[253] &quot;民國66年&quot;  &quot;民國66年&quot;  &quot;民國66年&quot;  &quot;民國66年&quot;  &quot;民國66年&quot;  &quot;民國66年&quot; 
+[259] &quot;民國66年&quot;  &quot;民國66年&quot;  &quot;民國65年&quot;  &quot;民國65年&quot;  &quot;民國65年&quot;  &quot;民國65年&quot; 
+[265] &quot;民國65年&quot;  &quot;民國65年&quot;  &quot;民國65年&quot;  &quot;民國64年&quot;  &quot;民國64年&quot;  &quot;民國64年&quot; 
+[271] &quot;民國64年&quot;  &quot;民國64年&quot;  &quot;民國63年&quot;  &quot;民國63年&quot;  &quot;民國63年&quot;  &quot;民國63年&quot; 
+[277] &quot;民國63年&quot;  &quot;民國63年&quot;  &quot;民國63年&quot;  &quot;民國63年&quot;  &quot;民國62年&quot;  &quot;民國62年&quot; 
+[283] &quot;民國62年&quot;  &quot;民國62年&quot;  &quot;民國62年&quot;  &quot;民國62年&quot;  &quot;民國61年&quot;  &quot;民國61年&quot; 
+[289] &quot;民國61年&quot;  &quot;民國61年&quot;  &quot;民國60年&quot;  &quot;民國60年&quot;  &quot;民國60年&quot;  &quot;民國60年&quot; 
+[295] &quot;民國60年&quot;  &quot;民國59年&quot;  &quot;民國59年&quot;  &quot;民國59年&quot;  &quot;民國58年&quot;  &quot;民國58年&quot; 
+[301] &quot;民國58年&quot;  &quot;民國58年&quot;  &quot;民國58年&quot;  &quot;民國58年&quot;  &quot;民國57年&quot;  &quot;民國57年&quot; 
+[307] &quot;民國57年&quot;  &quot;民國57年&quot;  &quot;民國57年&quot;  &quot;民國57年&quot;  &quot;民國57年&quot;  &quot;民國57年&quot; 
+[313] &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國56年&quot; 
+[319] &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國56年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot; 
+[325] &quot;民國55年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot;  &quot;民國55年&quot; 
+[331] &quot;民國55年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot; 
+[337] &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot;  &quot;民國54年&quot; 
+[343] &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot; 
+[349] &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國53年&quot; 
+[355] &quot;民國53年&quot;  &quot;民國53年&quot;  &quot;民國52年&quot;  &quot;民國52年&quot;  &quot;民國52年&quot;  &quot;民國52年&quot; 
+[361] &quot;民國52年&quot;  &quot;民國52年&quot;  &quot;民國52年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot; 
+[367] &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot; 
+[373] &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國51年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot; 
+[379] &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot; 
+[385] &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國50年&quot; 
+[391] &quot;民國50年&quot;  &quot;民國50年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot; 
+[397] &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot; 
+[403] &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國49年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot; 
+[409] &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot; 
+[415] &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot;  &quot;民國48年&quot; 
+[421] &quot;民國48年&quot;  &quot;民國47年&quot;  &quot;民國47年&quot;  &quot;民國47年&quot;  &quot;民國47年&quot;  &quot;民國47年&quot; </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShzdHJpbmdyKVxuYSA8LSBjKFwiMTk1OC0wNy0xMyAxMjowMFwiLCBcIjE5NTgtMDctMDUgMDA6MDBcIiwgXCIxOTU5LTA5LTExIDA5OjAwXCIpXG5iIDwtIHN0cl9zdWIoYSwgc3RhcnQgPSA2LCBlbmQgPSA3KVxudGFibGUoYilcbmBgYCJ9 -->
-<pre class="r"><code>library(stringr)
-a &lt;- c(&quot;1958-07-13 12:00&quot;, &quot;1958-07-05 00:00&quot;, &quot;1959-09-11 09:00&quot;)
-b &lt;- str_sub(a, start = 6, end = 7)
-table(b)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyZWFkcilcbmxpYnJhcnkoc3RyaW5ncilcblR5cGhvb25EYXRhIDwtIHJlYWRfY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dhcnlMS0wvY291cnNlLXByb2dyYW1taW5nLWZvci1kcy1RdWl6L21hc3Rlci9UeXBob29uRGF0YS5jc3ZcIiwgY29sX3R5cGVzID0gY29scyguZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSkpXG5UaW1lIDwtIFR5cGhvb25EYXRhJOeZvOW4g+itpuWgseaZgumWk1xuaGVhZChUaW1lKVxuYGBgIn0= -->
+<pre class="r"><code>library(readr)
+library(stringr)
+TyphoonData &lt;- read_csv(&quot;https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv&quot;, col_types = cols(.default = col_character()))
+Time &lt;- TyphoonData$發布警報時間
+head(Time)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYlxuMDcgMDkgXG4gMiAgMSBcbiJ9 -->
-<pre><code>b
-07 09 
- 2  1 </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMjAxOC0wOS0xNCAxMTozMFwiIFwiMjAxOC0wNy0wOSAxNDozMFwiIFwiMjAxNy0wOS0xMiAxNDozMFwiXG5bNF0gXCIyMDE3LTA5LTA2IDEwOjMwXCIgXCIyMDE3LTA4LTIwIDIzOjMwXCIgXCIyMDE3LTA3LTI5IDE3OjMwXCJcbiJ9 -->
+<pre><code>[1] &quot;2018-09-14 11:30&quot; &quot;2018-07-09 14:30&quot; &quot;2017-09-12 14:30&quot;
+[4] &quot;2017-09-06 10:30&quot; &quot;2017-08-20 23:30&quot; &quot;2017-07-29 17:30&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVGltZSA8LSBzdHJfc3ViKFRpbWUsc3RhcnQgPSA2LGVuZCA9IDcpXG5UaW1lXG5gYGAifQ== -->
+<pre class="r"><code>Time &lt;- str_sub(Time,start = 6,end = 7)
+Time</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBbMV0gXCIwOVwiIFwiMDdcIiBcIjA5XCIgXCIwOVwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMTBcIiBcIjA5XCIgXCIwOVwiIFwiMDlcIiBcIjA3XCIgXCIwOVwiIFwiMDhcIlxuIFsxNV0gXCIwOFwiIFwiMDdcIiBcIjA3XCIgXCIwNVwiIFwiMDlcIiBcIjA3XCIgXCIwNlwiIFwiMTBcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDlcIlxuIFsyOV0gXCIwOFwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIiBcIjA2XCIgXCIwNlwiIFwiMDhcIiBcIjA4XCIgXCIwNlwiIFwiMDVcIiBcIjA1XCIgXCIxMFwiIFwiMDlcIlxuIFs0M10gXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIxMFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDlcIiBcIjA5XCIgXCIwOVwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMTFcIlxuIFs1N10gXCIxMFwiIFwiMDlcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDdcIiBcIjA1XCIgXCIwOVwiIFwiMDlcIlxuIFs3MV0gXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIiBcIjEyXCIgXCIxMFwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDZcIlxuIFs4NV0gXCIxMVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDZcIiBcIjA0XCIgXCIwOVwiIFwiMDdcIiBcIjA3XCIgXCIxMFwiIFwiMDlcIlxuIFs5OV0gXCIwOVwiIFwiMDlcIiBcIjA3XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIwNlwiIFwiMDVcIiBcIjExXCIgXCIxMFwiIFwiMTBcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIlxuWzExM10gXCIwN1wiIFwiMTBcIiBcIjA4XCIgXCIwNlwiIFwiMTBcIiBcIjEwXCIgXCIwOVwiIFwiMDhcIiBcIjA3XCIgXCIxMFwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDlcIlxuWzEyN10gXCIwOVwiIFwiMDlcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA1XCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIiBcIjA2XCIgXCIxMFwiIFwiMDhcIlxuWzE0MV0gXCIwOFwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDlcIiBcIjA4XCIgXCIwOFwiIFwiMDlcIiBcIjA4XCIgXCIwOVwiIFwiMDhcIiBcIjA2XCIgXCIxMVwiIFwiMTBcIlxuWzE1NV0gXCIwOVwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDdcIiBcIjA3XCIgXCIwOVwiIFwiMDlcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDZcIlxuWzE2OV0gXCIwNVwiIFwiMTBcIiBcIjA5XCIgXCIwOVwiIFwiMDdcIiBcIjA3XCIgXCIwN1wiIFwiMDVcIiBcIjEwXCIgXCIxMFwiIFwiMTBcIiBcIjEwXCIgXCIwOVwiIFwiMDlcIlxuWzE4M10gXCIwN1wiIFwiMDVcIiBcIjEwXCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIxMFwiIFwiMDlcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIlxuWzE5N10gXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMTBcIiBcIjA5XCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDZcIiBcIjExXCIgXCIwOFwiIFwiMDhcIlxuWzIxMV0gXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDdcIiBcIjEwXCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIlxuWzIyNV0gXCIwN1wiIFwiMTFcIiBcIjEwXCIgXCIwOVwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDZcIiBcIjExXCIgXCIxMFwiIFwiMDlcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIlxuWzIzOV0gXCIwNVwiIFwiMTBcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDdcIiBcIjEwXCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwNlwiIFwiMDRcIlxuWzI1M10gXCIwOVwiIFwiMDlcIiBcIjA5XCIgXCIwOVwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDZcIiBcIjExXCIgXCIxMVwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIlxuWzI2N10gXCIwNlwiIFwiMTBcIiBcIjEwXCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIxMVwiIFwiMTBcIiBcIjEwXCIgXCIxMFwiIFwiMDlcIiBcIjA4XCIgXCIwN1wiIFwiMDZcIlxuWzI4MV0gXCIxMFwiIFwiMTBcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDlcIiBcIjA5XCIgXCIwN1wiIFwiMDdcIlxuWzI5NV0gXCIwNVwiIFwiMDlcIiBcIjA4XCIgXCIwN1wiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDlcIiBcIjA5XCIgXCIwOVwiIFwiMDhcIlxuWzMwOV0gXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMTFcIiBcIjEwXCIgXCIxMFwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA2XCIgXCIwNFwiIFwiMDlcIlxuWzMyM10gXCIwOVwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA3XCIgXCIwN1wiIFwiMDVcIiBcIjA1XCIgXCIxMVwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIlxuWzMzN10gXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIwNlwiIFwiMDZcIiBcIjA2XCIgXCIxMlwiIFwiMTBcIiBcIjA5XCIgXCIwOVwiIFwiMDlcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIlxuWzM1MV0gXCIwOFwiIFwiMDdcIiBcIjA3XCIgXCIwN1wiIFwiMDZcIiBcIjA1XCIgXCIwOVwiIFwiMDlcIiBcIjA3XCIgXCIwN1wiIFwiMDZcIiBcIjA2XCIgXCIwNlwiIFwiMTFcIlxuWzM2NV0gXCIxMFwiIFwiMTBcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIwN1wiIFwiMDVcIiBcIjA1XCIgXCIxMFwiIFwiMDlcIlxuWzM3OV0gXCIwOVwiIFwiMDlcIiBcIjA4XCIgXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIiBcIjA2XCIgXCIwN1wiIFwiMDdcIiBcIjA2XCIgXCIwNVwiIFwiMDVcIlxuWzM5M10gXCIwOVwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDhcIiBcIjA4XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCIgXCIwN1wiIFwiMDZcIiBcIjA2XCIgXCIwNlwiIFwiMDRcIlxuWzQwN10gXCIxMVwiIFwiMTFcIiBcIjEwXCIgXCIxMFwiIFwiMTBcIiBcIjA5XCIgXCIwOVwiIFwiMDlcIiBcIjA5XCIgXCIwOFwiIFwiMDhcIiBcIjA4XCIgXCIwOFwiIFwiMDdcIlxuWzQyMV0gXCIwN1wiIFwiMDlcIiBcIjA5XCIgXCIwN1wiIFwiMDdcIiBcIjA3XCJcbiJ9 -->
+<pre><code>  [1] &quot;09&quot; &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;09&quot; &quot;08&quot;
+ [15] &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;09&quot; &quot;07&quot; &quot;06&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;09&quot;
+ [29] &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;08&quot; &quot;08&quot; &quot;06&quot; &quot;05&quot; &quot;05&quot; &quot;10&quot; &quot;09&quot;
+ [43] &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;10&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;11&quot;
+ [57] &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;09&quot; &quot;09&quot;
+ [71] &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;12&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot;
+ [85] &quot;11&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;04&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot; &quot;10&quot; &quot;09&quot;
+ [99] &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;05&quot; &quot;11&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot;
+[113] &quot;07&quot; &quot;10&quot; &quot;08&quot; &quot;06&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;10&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;09&quot;
+[127] &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;10&quot; &quot;08&quot;
+[141] &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;09&quot; &quot;08&quot; &quot;09&quot; &quot;08&quot; &quot;06&quot; &quot;11&quot; &quot;10&quot;
+[155] &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot;
+[169] &quot;05&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;10&quot; &quot;10&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot;
+[183] &quot;07&quot; &quot;05&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot;
+[197] &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;11&quot; &quot;08&quot; &quot;08&quot;
+[211] &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot;
+[225] &quot;07&quot; &quot;11&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;11&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot;
+[239] &quot;05&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;10&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;04&quot;
+[253] &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;11&quot; &quot;11&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot;
+[267] &quot;06&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;11&quot; &quot;10&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot;
+[281] &quot;10&quot; &quot;10&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot;
+[295] &quot;05&quot; &quot;09&quot; &quot;08&quot; &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot;
+[309] &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;11&quot; &quot;10&quot; &quot;10&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;04&quot; &quot;09&quot;
+[323] &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;05&quot; &quot;11&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot;
+[337] &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;06&quot; &quot;12&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot;
+[351] &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;05&quot; &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;06&quot; &quot;11&quot;
+[365] &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;05&quot; &quot;05&quot; &quot;10&quot; &quot;09&quot;
+[379] &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;06&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;05&quot; &quot;05&quot;
+[393] &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot; &quot;06&quot; &quot;06&quot; &quot;06&quot; &quot;04&quot;
+[407] &quot;11&quot; &quot;11&quot; &quot;10&quot; &quot;10&quot; &quot;10&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;09&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;08&quot; &quot;07&quot;
+[421] &quot;07&quot; &quot;09&quot; &quot;09&quot; &quot;07&quot; &quot;07&quot; &quot;07&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoVGltZSlcbmBgYCJ9 -->
+<pre class="r"><code>table(Time)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGltZVxuIDA0ICAwNSAgMDYgIDA3ICAwOCAgMDkgIDEwICAxMSAgMTIgXG4gIDQgIDE4ICAzNyAgOTcgMTE2ICA5MyAgNDQgIDE1ICAgMiBcbiJ9 -->
+<pre><code>Time
+ 04  05  06  07  08  09  10  11  12 
+  4  18  37  97 116  93  44  15   2 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0wOCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0Kc3RyKDJMKQphPC1jKDJMLCAnYScsIDMuMCwgNCkKc3RyKGEpCmBgYApgYGB7cn0KbGlicmFyeShyZWFkcikKc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpCmhlYWQoc3R1ZGVudCxuID0gMTBMKQpgYGAKCmBgYHtyfQpnZW5kZXIgPC0gYygi55S35oCnIiwgIueUt+aApyIsICLlpbPmgKciLCAi55S35oCnIiwgIuWls+aApyIsICLnlLfmgKciKQpmYWN0b3IoZ2VuZGVyKQoKYGBgCmBgYHtyfQpsaWJyYXJ5KHJlYWRyKQpsaWJyYXJ5KHN0cmluZ3IpCmxpYnJhcnkobHVicmlkYXRlKQpUeXBob29uRGF0YSA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0dhcnlMS0wvY291cnNlLXByb2dyYW1taW5nLWZvci1kcy1RdWl6L21hc3Rlci9UeXBob29uRGF0YS5jc3YiLCBjb2xfdHlwZXMgPSBjb2xzKC5kZWZhdWx0ID0gY29sX2NoYXJhY3RlcigpKSkKWWVhciA8LSBUeXBob29uRGF0YSTlubTku70KYXMuaW50ZWdlcihZZWFyKS0xOTExCmFzLmNoYXJhY3RlcihZZWFyKQpzdHJfYygi5rCR5ZyLIixZZWFyLCLlubQiKQpgYGAKYGBge3J9CmxpYnJhcnkoc3RyaW5ncikKYSA8LSBjKCIxOTU4LTA3LTEzIDEyOjAwIiwgIjE5NTgtMDctMDUgMDA6MDAiLCAiMTk1OS0wOS0xMSAwOTowMCIpCmIgPC0gc3RyX3N1YihhLCBzdGFydCA9IDYsIGVuZCA9IDcpCnRhYmxlKGIpCmBgYAoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0wOCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0Kc3RyKDJMKQphPC1jKDJMLCAnYScsIDMuMCwgNCkKc3RyKGEpCmBgYApgYGB7cn0KbGlicmFyeShyZWFkcikKc3R1ZGVudCA8LSByZWFkX2NzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3RwZW1hcnRpbi9jb3Vyc2UtMTA3LTEtcHJvZ3JhbW1pbmctZm9yLWRhdGEtc2NpZW5jZS9tYXN0ZXIvZGF0YS9zdHVkZW50LmNzdiIpCmhlYWQoc3R1ZGVudCxuID0gMTBMKQpgYGAKCmBgYHtyfQpnZW5kZXIgPC0gYygi55S35oCnIiwgIueUt+aApyIsICLlpbPmgKciLCAi55S35oCnIiwgIuWls+aApyIsICLnlLfmgKciKQpnZW5kZXIgPC0gZmFjdG9yKGdlbmRlcixsZXZlbHMgPSBjKCLnlLfmgKciLCLlpbPmgKciKSxsYWJsZXM9YygiTWFsZSIsIkZlbWFsZSIpKQpnZW5kZXIKCmBgYApgYGB7cn0KbGlicmFyeShyZWFkcikKbGlicmFyeShzdHJpbmdyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKVHlwaG9vbkRhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9HYXJ5TEtML2NvdXJzZS1wcm9ncmFtbWluZy1mb3ItZHMtUXVpei9tYXN0ZXIvVHlwaG9vbkRhdGEuY3N2IiwgY29sX3R5cGVzID0gY29scyguZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSkpClllYXIgPC0gVHlwaG9vbkRhdGEk5bm05Lu9CgpZZWFyIDwtIGFzLmludGVnZXIoWWVhciktMTkxMQpZZWFyIDwtIGFzLmNoYXJhY3RlcihZZWFyKQpZZWFyIDwtIHN0cl9jKCLmsJHlnIsiLFllYXIsIuW5tCIpClllYXIKYGBgCmBgYHtyfQpsaWJyYXJ5KHJlYWRyKQpsaWJyYXJ5KHN0cmluZ3IpClR5cGhvb25EYXRhIDwtIHJlYWRfY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vR2FyeUxLTC9jb3Vyc2UtcHJvZ3JhbW1pbmctZm9yLWRzLVF1aXovbWFzdGVyL1R5cGhvb25EYXRhLmNzdiIsIGNvbF90eXBlcyA9IGNvbHMoLmRlZmF1bHQgPSBjb2xfY2hhcmFjdGVyKCkpKQpUaW1lIDwtIFR5cGhvb25EYXRhJOeZvOW4g+itpuWgseaZgumWkwpoZWFkKFRpbWUpClRpbWUgPC0gc3RyX3N1YihUaW1lLHN0YXJ0ID0gNixlbmQgPSA3KQpUaW1lCnRhYmxlKFRpbWUpCmBgYAoKCg==</div>
 
 
 
