@@ -236,10 +236,76 @@ c</code></pre>
 [2,] &quot;B&quot;  &quot;C&quot;  &quot;&quot;  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHMpXG5nc19hdXRoKG5ld191c2VyID0gVFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>library(googlesheets)
+gs_auth(new_user = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRGlzYWJsaW5nIC5odHRyLW9hdXRoIGJ5IHJlbmFtaW5nIHRvIC5odHRyLW9hdXRoLVNVU1BFTkRFRFxuUmVtb3ZpbmcgZ29vZ2xlIHRva2VuIHN0YXNoZWQgaW50ZXJuYWxseSBpbiAnZ29vZ2xlc2hlZXRzJy5cbmh0dHB1diBub3QgaW5zdGFsbGVkLCBkZWZhdWx0aW5nIHRvIG91dC1vZi1iYW5kIGF1dGhlbnRpY2F0aW9uXG4ifQ== -->
+<pre><code>Disabling .httr-oauth by renaming to .httr-oauth-SUSPENDED
+Removing google token stashed internally in 'googlesheets'.
+httpuv not installed, defaulting to out-of-band authentication</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNC9ld0Rib0hWRHdQV2toZ0FEUG9VYjdfLUQxWE9lQnlvQkhBM20tSFBISXRVaHdzQlFuSmJURkhvXG5gYGAifQ== -->
+<pre class="r"><code>4/ewDboHVDwPWkhgADPoUb7_-D1XOeByoBHA3m-HPHItUhwsBQnJbTFHo</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gb2F1dGgyLjBfYWNjZXNzX3Rva2VuKGVuZHBvaW50LCBhcHAsIGNvZGUgPSBjb2RlLCB1c2VyX3BhcmFtcyA9IHVzZXJfcGFyYW1zLCAgOiBcbiAgQmFkIFJlcXVlc3QgKEhUVFAgNDAwKS4gRmFpbGVkIHRvIGdldCBhbiBhY2Nlc3MgdG9rZW4uXG4ifQ== -->
+<pre><code>Error in oauth2.0_access_token(endpoint, app, code = code, user_params = user_params,  : 
+  Bad Request (HTTP 400). Failed to get an access token.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3NTdXJ2ZXk8LWdzX2tleShcIjFtQzlibnhqMTFOQ05vT0N3MFZtbjRueEVSYkh0TGplR285djlDOWIyR0RFXCIpICAjZG93bmxvYWQgc2hlZXQgaW5mb3JtYXRpb24gYXMgYW4gb2JqZWN0XG5gYGAifQ== -->
+<pre class="r"><code>gsSurvey&lt;-gs_key(&quot;1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE&quot;)  #download sheet information as an object</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiaHR0cHV2IG5vdCBpbnN0YWxsZWQsIGRlZmF1bHRpbmcgdG8gb3V0LW9mLWJhbmQgYXV0aGVudGljYXRpb25cbiJ9 -->
+<pre><code>httpuv not installed, defaulting to out-of-band authentication</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuNC9ld0JlQmRyeU5nczJ6R2ViRGhPUkE2RHNic3MwRVhCTEZSbnAydS01a1hyRXVNd2ZDakdCclBNXG5gYGAifQ== -->
+<pre class="r"><code>4/ewBeBdryNgs2zGebDhORA6Dsbss0EXBLFRnp2u-5kXrEuMwfCjGBrPM</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU2hlZXQgc3VjY2Vzc2Z1bGx5IGlkZW50aWZpZWQ6IFwi5YWo54+t6YCa6KiK6YyEIChSZXNwb25zZXMpXCJcbiJ9 -->
+<pre><code>Sheet successfully identified: &quot;全班通訊錄 (Responses)&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXk8LWdzX3JlYWQoZ3NTdXJ2ZXksd3M9MSkgI2FjY2VzcyB0aGUgMXN0IHdvcmtzaGVldFxuYGBgIn0= -->
+<pre class="r"><code>classSurvey&lt;-gs_read(gsSurvey,ws=1) #access the 1st worksheet</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWNjZXNzaW5nIHdvcmtzaGVldCB0aXRsZWQgJ0Zvcm0gUmVzcG9uc2VzIDEnLlxuIn0= -->
+<pre><code>Accessing worksheet titled 'Form Responses 1'.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Eb3dubG9hZGluZzogMS4zIGtCICAgICBcbkRvd25sb2FkaW5nOiAxLjMga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMiBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4yIGtCICAgICBcbkRvd25sb2FkaW5nOiAyLjIga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMiBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4yIGtCICAgICBcbkRvd25sb2FkaW5nOiAyLjIga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMiBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4yIGtCICAgICBcbiJ9 -->
+<pre><code>
+Downloading: 1.3 kB     
+Downloading: 1.3 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBUaW1lc3RhbXAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGBFbWFpbCBBZGRyZXNzYCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg5aeT5ZCNID0gY29sX2NoYXJhY3RlcigpLFxuICDlrbjomZ8gPSBjb2xfaW50ZWdlcigpLFxuICDlsYXkvY/lnLDooYzmlL/ljYAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIOaAp+WIpSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg5pys5a245pyf5a245YiG5pW4ID0gY29sX2ludGVnZXIoKSxcbiAg5pys5a245pyf55uu5YmN5bey5Y+D5Yqg5LmL6Kqy5aSW5rS75YuVID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  Timestamp = col_character(),
+  `Email Address` = col_character(),
+  姓名 = col_character(),
+  學號 = col_integer(),
+  居住地行政區 = col_character(),
+  性別 = col_character(),
+  本學期學分數 = col_integer(),
+  本學期目前已參加之課外活動 = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0xNyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShyZWFkcikKZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvJUU3JUFDJUFDJUU0JUI4JTg5JUU1JUIxJTg2JUU3JUI2JTkzJUU2JUJGJTlGJUU2JTkyJUFEJUU1JUFFJUEyJUU3JUFCJUI2JUU4JUIzJUJEJUU1JThGJTgzJUU4JUIzJUJEJUU0JUJEJTlDJUU1JTkzJTgxJUU2JThBJTk1JUU3JUE1JUE4JUU3JUI1JTkwJUU2JTlFJTlDJUU2JUE4JUEzJUU2JTlDJUFDJTIwLSUyMFNoZWV0MS5jc3YiKQpgYGAKCgpgYGB7cn0KbGlicmFyeShzdHJpbmdyKQphYTwtc3RyX3NwbGl0X2ZpeGVkKGZpbG1Wb3RpbmdEYXRhJOiri+mBuOaTh+S9oOacgOWWnOatoeeahOW9seeJh+S6jOmDqCwiLCAiLDMpCmJiPC1zdHJfYyhhYSkKdGFibGUoYmIpCmBgYAoKYGBge3J9CmE8LWMoIkEsIEIiLCJCLCBDIikKYQpzdHJfc3BsaXRfZml4ZWQoYSwiLCAiLCBuPTMpLT5iCnN0cl9jKGIpLT5jCmMKdGFibGUoYikKYgpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0xNyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShyZWFkcikKZmlsbVZvdGluZ0RhdGEgPC0gcmVhZF9jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS90cGVtYXJ0aW4vY291cnNlLTEwNy0xLXByb2dyYW1taW5nLWZvci1kYXRhLXNjaWVuY2UvbWFzdGVyL2RhdGEvJUU3JUFDJUFDJUU0JUI4JTg5JUU1JUIxJTg2JUU3JUI2JTkzJUU2JUJGJTlGJUU2JTkyJUFEJUU1JUFFJUEyJUU3JUFCJUI2JUU4JUIzJUJEJUU1JThGJTgzJUU4JUIzJUJEJUU0JUJEJTlDJUU1JTkzJTgxJUU2JThBJTk1JUU3JUE1JUE4JUU3JUI1JTkwJUU2JTlFJTlDJUU2JUE4JUEzJUU2JTlDJUFDJTIwLSUyMFNoZWV0MS5jc3YiKQpgYGAKCgpgYGB7cn0KbGlicmFyeShzdHJpbmdyKQphYTwtc3RyX3NwbGl0X2ZpeGVkKGZpbG1Wb3RpbmdEYXRhJOiri+mBuOaTh+S9oOacgOWWnOatoeeahOW9seeJh+S6jOmDqCwiLCAiLDMpCmJiPC1zdHJfYyhhYSkKdGFibGUoYmIpCmBgYAoKYGBge3J9CmE8LWMoIkEsIEIiLCJCLCBDIikKYQpzdHJfc3BsaXRfZml4ZWQoYSwiLCAiLCBuPTMpLT5iCnN0cl9jKGIpLT5jCmMKdGFibGUoYikKYmdvb2dsZQpgYGAKYGBge3J9CmxpYnJhcnkoZ29vZ2xlc2hlZXRzKQpnc19hdXRoKG5ld191c2VyID0gVFJVRSkKYGBgCgpgYGB7cn0KZ3NTdXJ2ZXk8LWdzX2tleSgiMW1DOWJueGoxMU5DTm9PQ3cwVm1uNG54RVJiSHRMamVHbzl2OUM5YjJHREUiKSAgI2Rvd25sb2FkIHNoZWV0IGluZm9ybWF0aW9uIGFzIGFuIG9iamVjdApjbGFzc1N1cnZleTwtZ3NfcmVhZChnc1N1cnZleSx3cz0xKSAjYWNjZXNzIHRoZSAxc3Qgd29ya3NoZWV0CmBgYAoK</div>
 
 
 
