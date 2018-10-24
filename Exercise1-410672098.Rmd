@@ -19,18 +19,32 @@ bankdata <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/ma
 ### 1.1
 將**銀行**變數改成factor
 ```{r ans11}
-bankdata$銀行<-factor(bankdata$銀行)
+bankdata$銀行<-as.factor(bankdata$銀行)
+str(bankdata$銀行)
 ```
 
 ### 1.2
 將年月改成西元年月
 ```{r ans12}
+a=rep("",nrow(bankdata))
+for (i in 1:nrow(bankdata)){
+  b<-gsub("/","",bankdata[i,2])
+  a[i]<-as.numeric(b)+191100
+}
+for (i in 1:nrow(bankdata)){
+  bankdata[i,2]<-paste0(substr(a[i],1,4),"/",substr(a[i],5,6))
+}
+head(bankdata[,2])
 ```
 
 ## 2
 Google天災地圖會發佈天災時地資訊，如[潭美颱風(Typhoon Trami)](https://google.org/crisismap/google.com/2018-trami)，但它的時間是以UTC表示，如"2018/30/09 00:00 UTC",試透過`lubridate::with_tz()`將"2018/30/09 00:00 UTC"轉成台灣時間。(Hint: 台灣tzone可用`grep("Taipei",OlsonNames(),value=TRUE)`指令查得)
 
 ```{r ans2}
+library(lubridate)
+x <- ydm_hm("2018/30/09 00:00", tz="UTC")
+x <- with_tz(x,"Asia/Taipei") 
+x
 ```
 
 
