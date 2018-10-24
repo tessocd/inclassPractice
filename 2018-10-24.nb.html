@@ -177,8 +177,279 @@ $(document).ready(function () {
 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REYgPC0gZGF0YS5mcmFtZShcbiAgU3R1SUQ9YygxLDIsMyw0LDUpLFxuICBuYW1lPWMoXCLlsI/mmI5cIixcIuWkp+mbhFwiLFwi6IOW6JmOXCIsXCLlsI/mlrBcIixcIuWkp+eZvVwiKSxcbiAgc2NvcmU9Yyg4MCw2MCw5MCw3MCw1MClcbiAgKVxuU3R1REYgXG5gYGAifQ== -->
+<pre class="r"><code>StuDF &lt;- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c(&quot;小明&quot;,&quot;大雄&quot;,&quot;胖虎&quot;,&quot;小新&quot;,&quot;大白&quot;),
+  score=c(80,60,90,70,50)
+  )
+StuDF </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6NX0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJ1MDdETUJSMTRoaG9wSlpLNVRjYUNYNkFEbDI2SVBFUTZtclNGQ0tDWFRrT01GYUNHYmFLaWhXSnRUL0E1d0JsNHdzS2Z0MG9TYVRrM0ZmTzhiaytHWTRQd25HSUVQSVJKaDd5c1FvRFgzMDhGS0NXeG51RWNFOEZ1dE5STHpuOFJlWVpJSWM3RHJzTzkxd0Q0YmFlMTR4R3dISVFRMTRYMmNxUzJ5VExWZFMxRTNOVC9YeDcvMTUrVkxLZjEwZkkxZytMOWZLcDdLMmV2MTVxMldMVjBDQnhSbk9RS0lXbk5KWmNxR2dEOWdabnpzYVJ3L081eFdPSEk3QlhwMmYwSmdGNkRNVlRXWXlHTGduMEJEVHltSXVrUWRFUy9DNENHcjA2M3lycWhlaEIvTmM0ZlRpaGtrWlRvWG1OZ3hyZE5wL0psRE5GNXZmYzNxcy9lNkpSMkMyWUZwLzA0NnVDWGZmM3RZQzlLL08wWFV3cU1iYVNBUnlNd0ZvVGRwbXkwbXhHTDVMTUpSMWwwbmlNWmlKbEVweW9haDVKTGluTWhUSFBvR0p2Wi9NUGVFcUNGcTBDQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80"},{"1":"2","2":"大雄","3":"60"},{"1":"3","2":"胖虎","3":"90"},{"1":"4","2":"小新","3":"70"},{"1":"5","2":"大白","3":"50"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMoU3R1REYpIFxuYGBgIn0= -->
+<pre class="r"><code>names(StuDF) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiU3R1SURcIiBcIm5hbWVcIiAgXCJzY29yZVwiXG4ifQ== -->
+<pre><code>[1] &quot;StuID&quot; &quot;name&quot;  &quot;score&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoU3R1REYpXG5gYGAifQ== -->
+<pre class="r"><code>colnames(StuDF)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiU3R1SURcIiBcIm5hbWVcIiAgXCJzY29yZVwiXG4ifQ== -->
+<pre><code>[1] &quot;StuID&quot; &quot;name&quot;  &quot;score&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm93bmFtZXMoU3R1REYpXG5gYGAifQ== -->
+<pre class="r"><code>rownames(StuDF)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMVwiIFwiMlwiIFwiM1wiIFwiNFwiIFwiNVwiXG4ifQ== -->
+<pre><code>[1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbMSwyXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[1,2]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOWwj+aYjlxuTGV2ZWxzOiDlpKfnmb0g5aSn6ZuEIOiDluiZjiDlsI/mmI4g5bCP5pawXG4ifQ== -->
+<pre><code>[1] 小明
+Levels: 大白 大雄 胖虎 小明 小新</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbLDJdXG5gYGAifQ== -->
+<pre class="r"><code>StuDF[,2]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOWwj+aYjiDlpKfpm4Qg6IOW6JmOIOWwj+aWsCDlpKfnmb1cbkxldmVsczog5aSn55m9IOWkp+mbhCDog5bomY4g5bCP5piOIOWwj+aWsFxuIn0= -->
+<pre><code>[1] 小明 大雄 胖虎 小新 大白
+Levels: 大白 大雄 胖虎 小明 小新</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbMSxdXG5gYGAifQ== -->
+<pre class="r"><code>StuDF[1,]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVFzVTdETUJDOXhBbW9rU2hJL1k1bXFOaGg2TUlLREYyTjYwSlVZMWVPQTR4SU1NTldVYkVpc2ZZSCtCeEsyZmlDZ3Aza1F1TklTZTdlM2IzMzdrNkhvMEV5U2dBZ0JCSUhFQkliUnFIOUJCQkJ4LzN2QUVqUEJxN1NkY0RSRDlRUDJTc2I3WVEzdENQNERSZTVqUTdzR3dQY2wram4yL3ZYNG1NciszNTl4R3o5TUY4dm5wcmE4bm4xMHNybVMwOGpab0xtS05FSVR5Z3pTdHRvZzNhUHo5RnVlMXpTYTQ3akJNRXpVNXdNNnlSeUhWakltZExjbytob2Rac2lEWjRpcUpySXIrY3NHVk5EMDRsMm5LVzdGdFd1bXBsTVNVc1U5cXFMdFlZRDdRSDdoWFRDNHo2N0t1UzBmK2dFL2cxc20ybGlVa2xHYUN6R2szRjVtY2xtVVVFdnVLaVRybDJ3M0MrZDZVd2EzTVNpZVdxVW9kaVhNQ1VRcVM2LytRTXZnQURqV1FJQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLF1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(1,4),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJ1MDdETUJTOWpoTlFJMUVxOVR1YUFiSFRvUXNqajZHclNWMklNSGJsT01CWUNXYllLaXBXSk5iK0FKOVRLQnRmVUxBVDM0akVVcEp6SHo3bjNKdlQwZmdnSHNjQUVBQ05DQVRVd2pDd0x3SWhkTnozSG9EMkxYQ1ZybXM4K29IeURIdmdEOTByQ2V4TiswUXRnaDNCYjduSUxlcFYxWG1aWGIrOWZ5MC8va1hmcjQ4WWJSNFdtK1ZUWFZzOWY3NDBvc1dxcFJHbGd1VW9VUXRQV1dxVXRtaUwxb2ZuM3ZySjNGdHYwa2gydzVHR1l2TE1GTWNqSDRTdUF3dDVxalJ2VVhTMHVrdVFCdGRDcXRXNFJ2cmJjaGxQbUdISlZEdmUwbW1EYmxmTlRLYWtKUXY2MWZZYWw0bHVKZllMNmNRbmcvU3FrTmVEUXlmZ0RSQnZpSGhUaUdrbEdhS3hDTmZINVdVbTYyRUZ1K0RDQjEwN1pEbGpNdE9aTkRpSnplYUpVWVpoWDV3cWdabnFMMnovQUVKeVBobHhBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLGMoMiwzKV1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(1,4),c(2,3)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVFTMDdETUJBZHh3bW9rU2hJUFVlelFCeWdDeTRBWXRHdGNWMklNSGJsdU1DeUVxeGhWMUd4UldMYkMzQWNvRnlpWU1lWnFMRWwyek52UHUvTm5KK09qL054RGdBSjBJeEFRcDJaSnU0aGtFTFAvdzhBZEZBbkFEMEl2d3NCWkZIaW5oUjNRbGJPT2dyUlJZMSt2WC84ckQ1M3ZOKzNKL1Eyajh2TjZybU5yVisrWHp2ZWNoMXhaRnl5Q2lsYTRpbmpWaHRuYmQzdGU0bWpDNmpQNkd3UmpLaU5ZcmNDMnlRTm1Ib1FFeXF1allpcWVrYmZGMWlKbXlCaEd6NlIva1hDOGdtenJKZ2EzN2NXMTJtM3IyZTIxTW8xU3daaFlaMWlZaUxnY0s0OCtXVElyK2ZxWm5qaUNSb0JwQkZFR2xFN3RxZE1VVmlHR3hQcXFsVHRzSkpkQ3RrNGZUZGtQV014TTZXeU9JbERxOEpxeXpBdjUxb2lFaGEvL1FlT21vSVFUQUlBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"小明","2":"80","_rn_":"1"},{"1":"小新","2":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYygxLDQpLF1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(1,4),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJ1MDdETUJTOWpoTlFJMUVxOVR1YUFZbVpEbDBZZVF4ZFRlcENoTEVyeHdIR1NqRERWbEd4SXJIMkIvaWNRdG40Z29LZCtFWWtscEtjKy9BNTU5NmNqc1lIOFRnR2dBQm9SQ0NnRm9hQmZSRUlvZU8rOXdDMGI0R3JkRjNqMFErVVo5Z0RmK2hlU1dCdjJpZHFFZXdJZnN0RmJsR3ZxczdMN1BydC9XdjU4Uy82Zm4zRWFQT3cyQ3lmNnRycStmT2xFUzFXTFkwb0ZTeEhpVnA0eWxLanRFVmJ0RDQ4OTlaUDV0NTZrMGF5RzQ0MEZKTm5wamdlK1NCMEhWaklVNlY1aTZLajFWMkNOTGdXVXEzR05kTGZsc3Q0d2d4THB0cnhsazRiZEx0cVpqSWxMVm5RcjdiWHVFeDBLN0ZmU0NjK0dhUlhoYndlSERvQmI0QjRROFNiUWt3cnlSQ05SYmcrTGk4eldROHIyQVVYUHVqYUljc1prNW5PcE1GSmJEWlBqRElNKytKVUNjeFVmMkg3QjJCUVlIcHhBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbLWMoMSw0KSxdXG5gYGAifQ== -->
+<pre class="r"><code>StuDF[-c(1,4),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6M30sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJzVTdETUJDOXhBblFTQzFJNVRlYUFZbTlRNWN1RENDaHJpWjFJY0xZbGVNQVl5V1lZYXVvV0pGWSt3TjhEbEIrb21ESHZvZ2trdlB1bnMvdjd0bW5vOGxSTWtrQUlBUVNCeEFTRTBhaCtRVVFRY2ZpUFFEcG04RHU5Q3dPd1gzRFBZK0huZ0RTOVhXaHg2QWx0c1BaTGVPRmlRN01pZ0VXRmZ2NTl2NjkrdmlYL2J3K1lyWjVXRzVXVC9YZSt2bnJwWkV0MTYwZWNjWnBnUzNxeGpPYWFhbE10SzF0blBqeHp4Y094MmlqS1Nmb0RVTTVndVNaTHNjam4wUzJBamVLVENyV2t1Z29lWmVpVFB1S1lsZE1mbHNUSjFPcWFUcFRWcnVhdWlHNUsrYzZsOElJaG4wbjBqZ2NxQmF4WHdvN3dIU1FYWlhpZW5Cc0c3ajNxVmJYSTJuR3RtV0VnOFY0bFV4YzVxSTJ6T2tGNHo3cEdhT1Z6M1N1Y3FIUmlXR0xWRXROc1M3SkpFZkd2Y2oyRDlTdVRIbUpBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2","2":"大雄","3":"60","_rn_":"2"},{"1":"3","2":"胖虎","3":"90","_rn_":"3"},{"1":"5","2":"大白","3":"50","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYyhULEYsRixGLEYpLGMoRixULEYpXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[c(T,F,F,F,F),c(F,T,F)]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOWwj+aYjlxuTGV2ZWxzOiDlpKfnmb0g5aSn6ZuEIOiDluiZjiDlsI/mmI4g5bCP5pawXG4ifQ== -->
+<pre><code>[1] 小明
+Levels: 大白 大雄 胖虎 小明 小新</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbYyhULEYsRixULEYpLF1cbmBgYCJ9 -->
+<pre class="r"><code>StuDF[c(T,F,F,T,F),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJ1MDdETUJTOWpoTlFJMUVxOVR1YWdZR1ZEbDBZZVF4ZFRlcENoTEVyeHdIR1NqRERWbEd4SXJIMkIvaWNRdG40Z29LZCtFWWtscEtjKy9BNTU5NmNqc1lIOFRnR2dBQm9SQ0NnRm9hQmZSRUlvZU8rOXdDMGI0R3JkRjNqMFErVVo5Z0RmK2hlU1dCdjJpZHFFZXdJZnN0RmJsR3ZxczdMN1BydC9XdjU4Uy82Zm4zRWFQT3cyQ3lmNnRycStmT2xFUzFXTFkwb0ZTeEhpVnA0eWxLanRFVmJ0RDQ4OTlaUDV0NTZrMGF5RzQ0MEZKTm5wamdlK1NCMEhWaklVNlY1aTZLajFWMkNOTGdXVXEzR05kTGZsc3Q0d2d4THB0cnhsazRiZEx0cVpqSWxMVm5RcjdiWHVFeDBLN0ZmU0NjK0dhUlhoYndlSERvQmI0QjRROFNiUWt3cnlSQ05SYmcrTGk4eldROHIyQVVYUHVqYUljc1prNW5PcE1GSmJEWlBqRElNKytKVUNjeFVmMkg3QndZMmd0OXhBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["StuID"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["name"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["score"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"小明","3":"80","_rn_":"1"},{"1":"4","2":"小新","3":"70","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKFN0dURGJHNjb3JlID49IDgwKVxuYGBgIn0= -->
+<pre class="r"><code>(StuDF$score &gt;= 80)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFIEZBTFNFICBUUlVFIEZBTFNFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKFN0dURGJG5hbWUgPT0gXCLlsI/mlrBcIilcbmBgYCJ9 -->
+<pre class="r"><code>(StuDF$name == &quot;小新&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFIEZBTFNFIEZBTFNFICBUUlVFIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpY2goU3R1REYkc2NvcmUgPj0gODApXG5gYGAifQ== -->
+<pre class="r"><code>which(StuDF$score &gt;= 80)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgM1xuIn0= -->
+<pre><code>[1] 1 3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpY2goU3R1REYkbmFtZSA9PSBcIuWwj+aWsFwiKVxuYGBgIn0= -->
+<pre class="r"><code>which(StuDF$name == &quot;小新&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDRcbiJ9 -->
+<pre><code>[1] 4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbd2hpY2goU3R1REYkc2NvcmU+PTgwKSwyXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[which(StuDF$score&gt;=80),2]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIOWwj+aYjiDog5bomY5cbkxldmVsczog5aSn55m9IOWkp+mbhCDog5bomY4g5bCP5piOIOWwj+aWsFxuIn0= -->
+<pre><code>[1] 小明 胖虎
+Levels: 大白 大雄 胖虎 小明 小新</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3R1REZbd2hpY2goU3R1REYkbmFtZSA9PSBcIuWwj+aWsFwiKSwzXVxuYGBgIn0= -->
+<pre class="r"><code>StuDF[which(StuDF$name == &quot;小新&quot;),3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDcwXG4ifQ== -->
+<pre><code>[1] 70</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHMpXG5nc1N1cnZleTwtZ3Nfa2V5KFwiMW1DOWJueGoxMU5DTm9PQ3cwVm1uNG54RVJiSHRMamVHbzl2OUM5YjJHREVcIikgICNkb3dubG9hZCBzaGVldCBpbmZvcm1hdGlvbiBhcyBhbiBvYmplY3RcbmBgYCJ9 -->
+<pre class="r"><code>library(googlesheets)
+gsSurvey&lt;-gs_key(&quot;1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE&quot;)  #download sheet information as an object</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU2hlZXQgc3VjY2Vzc2Z1bGx5IGlkZW50aWZpZWQ6IFwi5YWo54+t6YCa6KiK6YyEIChSZXNwb25zZXMpXCJcbiJ9 -->
+<pre><code>Sheet successfully identified: &quot;全班通訊錄 (Responses)&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXk8LWdzX3JlYWQoZ3NTdXJ2ZXksd3M9MSkgI2FjY2VzcyB0aGUgMXN0IHdvcmtzaGVldFxuYGBgIn0= -->
+<pre class="r"><code>classSurvey&lt;-gs_read(gsSurvey,ws=1) #access the 1st worksheet</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWNjZXNzaW5nIHdvcmtzaGVldCB0aXRsZWQgJ0Zvcm0gUmVzcG9uc2VzIDEnLlxuIn0= -->
+<pre><code>Accessing worksheet titled 'Form Responses 1'.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Eb3dubG9hZGluZzogMS4yIGtCICAgICBcbkRvd25sb2FkaW5nOiAxLjIga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMiBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4yIGtCICAgICBcbkRvd25sb2FkaW5nOiAyLjMga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMyBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4zIGtCICAgICBcbkRvd25sb2FkaW5nOiAyLjMga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMyBrQiAgICAgXG5Eb3dubG9hZGluZzogMi4zIGtCICAgICBcbiJ9 -->
+<pre><code>
+Downloading: 1.2 kB     
+Downloading: 1.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.2 kB     
+Downloading: 2.3 kB     
+Downloading: 2.3 kB     
+Downloading: 2.3 kB     
+Downloading: 2.3 kB     
+Downloading: 2.3 kB     
+Downloading: 2.3 kB     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBUaW1lc3RhbXAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGBFbWFpbCBBZGRyZXNzYCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg5aeT5ZCNID0gY29sX2NoYXJhY3RlcigpLFxuICDlrbjomZ8gPSBjb2xfaW50ZWdlcigpLFxuICDlsYXkvY/lnLDooYzmlL/ljYAgPSBjb2xfY2hhcmFjdGVyKCksXG4gIOaAp+WIpSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAg5pys5a245pyf5a245YiG5pW4ID0gY29sX2ludGVnZXIoKSxcbiAg5pys5a245pyf55uu5YmN5bey5Y+D5Yqg5LmL6Kqy5aSW5rS75YuVID0gY29sX2NoYXJhY3RlcigpXG4pXG4ifQ== -->
+<pre><code>Parsed with column specification:
+cols(
+  Timestamp = col_character(),
+  `Email Address` = col_character(),
+  姓名 = col_character(),
+  學號 = col_integer(),
+  居住地行政區 = col_character(),
+  性別 = col_character(),
+  本學期學分數 = col_integer(),
+  本學期目前已參加之課外活動 = col_character()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGNsYXNzU3VydmV5JOaAp+WIpSA9PSBcIueUt1wiKVxuYGBgIn0= -->
+<pre class="r"><code>(classSurvey$性別 == &quot;男&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRVxuWzIwXSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzM5XSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRVxuWzU4XSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE
+[20]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+[39] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE
+[58]  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGNsYXNzU3VydmV5JOacrOWtuOacn+WtuOWIhuaVuCA+IDIwKVxuYGBgIn0= -->
+<pre class="r"><code>(classSurvey$本學期學分數 &gt; 20)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzIwXSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRVxuWzM5XSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRVxuWzU4XSBGQUxTRSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE
+[20] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+[39] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+[58] FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuKGNsYXNzU3VydmV5JOaAp+WIpSA9PSBcIueUt1wiIHwgXG4gICAgY2xhc3NTdXJ2ZXkk5pys5a245pyf5a245YiG5pW4ID4gMjApXG5gYGAifQ== -->
+<pre class="r"><code>(classSurvey$性別 == &quot;男&quot; | 
+    classSurvey$本學期學分數 &gt; 20)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRVxuWzIwXSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSBGQUxTRVxuWzM5XSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRVxuWzU4XSAgVFJVRSBGQUxTRVxuIn0= -->
+<pre><code> [1]  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE
+[20]  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+[39] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+[58]  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NTdXJ2ZXlbY2xhc3NTdXJ2ZXkk5oCn5YilID09IFwi55S3XCIgJlxuY2xhc3NTdXJ2ZXkk5pys5a245pyf5a245YiG5pW4ID4gMjYsM11cbmBgYCJ9 -->
+<pre class="r"><code>classSurvey[classSurvey$性別 == &quot;男&quot; &amp;
+classSurvey$本學期學分數 &gt; 26,3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MSwibnJvdyI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMlFRYXJDTUJSRlgxcXJ0T0JIY0IwV0ZKZmdDaHc1amJWcXNTYlNSblRvUU5DSlVQbnV3VC94YjhIVlJIRVRyVW1iS0dTU2w5eWMzTHo3aG9OUnp4dDVBR0NCN1NDd2JMR3RXV0pCVUFOWDFpMkEzUzRGZ0ZZSndrNWV1UHo4eDIvWjgzN1J3bXQvNC8rSHh6RXpMSndneG1tcW5tdlJtMkNHL1dtQ2w2R0pFNkY5OGNxOHpxKy9QRHNacUp2UWphL3hwbXh1SjVhaUtISlJjZ051MEJXTEtCR29KZk00UmtNb01ZVFdta2pyU1NlWXI4bWkwKzNMcnRVZ1FQMkhxb0Y4OXFqNjB5NlVsNk84NmlHWlJTVFVDV004RG1OMStCRVp5Z2orS29rSTArTVJhdW96eXJEbXZJREdXaW5EUWY0R2E1bHFzTDRCQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["姓名"],"name":[1],"type":["chr"],"align":["left"]}],"data":[{"1":"周子翔"},{"1":"鄭宇成"}],"options":{"columns":{"min":{},"max":[10],"total":[1]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0yNCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMjAxOC0xMC0yNCIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KU3R1REYgPC0gZGF0YS5mcmFtZSgKICBTdHVJRD1jKDEsMiwzLDQsNSksCiAgbmFtZT1jKCLlsI/mmI4iLCLlpKfpm4QiLCLog5bomY4iLCLlsI/mlrAiLCLlpKfnmb0iKSwKICBzY29yZT1jKDgwLDYwLDkwLDcwLDUwKQogICkKU3R1REYgCmBgYAoKYGBge3J9Cm5hbWVzKFN0dURGKSAKY29sbmFtZXMoU3R1REYpCmBgYApgYGB7cn0Kcm93bmFtZXMoU3R1REYpCmBgYAoKYGBge3J9ClN0dURGWzEsMl0KU3R1REZbLDJdClN0dURGWzEsXQpTdHVERltjKDEsNCksXQpTdHVERltjKDEsNCksYygyLDMpXQpgYGAKCmBgYHtyfQpTdHVERltjKDEsNCksXQpTdHVERlstYygxLDQpLF0KYGBgCgpgYGB7cn0KU3R1REZbYyhULEYsRixGLEYpLGMoRixULEYpXQpTdHVERltjKFQsRixGLFQsRiksXQpgYGAKCmBgYHtyfQooU3R1REYkc2NvcmUgPj0gODApCihTdHVERiRuYW1lID09ICLlsI/mlrAiKQpgYGAKCmBgYHtyfQp3aGljaChTdHVERiRzY29yZSA+PSA4MCkKd2hpY2goU3R1REYkbmFtZSA9PSAi5bCP5pawIikKYGBgCmBgYHtyfQpTdHVERlt3aGljaChTdHVERiRzY29yZT49ODApLDJdClN0dURGW3doaWNoKFN0dURGJG5hbWUgPT0gIuWwj+aWsCIpLDNdCmBgYApgYGB7cn0KbGlicmFyeShnb29nbGVzaGVldHMpCmdzU3VydmV5PC1nc19rZXkoIjFtQzlibnhqMTFOQ05vT0N3MFZtbjRueEVSYkh0TGplR285djlDOWIyR0RFIikgICNkb3dubG9hZCBzaGVldCBpbmZvcm1hdGlvbiBhcyBhbiBvYmplY3QKY2xhc3NTdXJ2ZXk8LWdzX3JlYWQoZ3NTdXJ2ZXksd3M9MSkgI2FjY2VzcyB0aGUgMXN0IHdvcmtzaGVldApgYGAKCmBgYHtyfQooY2xhc3NTdXJ2ZXkk5oCn5YilID09ICLnlLciKQoKKGNsYXNzU3VydmV5JOacrOWtuOacn+WtuOWIhuaVuCA+IDIwKQoKKGNsYXNzU3VydmV5JOaAp+WIpSA9PSAi55S3IiB8IAogICAgY2xhc3NTdXJ2ZXkk5pys5a245pyf5a245YiG5pW4ID4gMjApCmBgYApgYGB7cn0KY2xhc3NTdXJ2ZXlbY2xhc3NTdXJ2ZXkk5oCn5YilID09ICLnlLciICYKY2xhc3NTdXJ2ZXkk5pys5a245pyf5a245YiG5pW4ID4gMjYsM10KYGBgCmBgYHtyfQoKYGBgCgo=</div>
 
 
 
