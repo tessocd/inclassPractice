@@ -1,0 +1,98 @@
+---
+title: "2018-09-26"
+output: html_notebook
+---
+```{r}
+a<-5
+a2<-5L
+```
+
+
+
+```{r}
+aVector<-c(5,6,7)
+a2Vector<-c(5L,6L,7L)
+```
+
+```{r}
+num1<-1
+num2<-100
+num1+num2
+```
+```{r}
+num1<-1.568
+num2<-2.121
+round(num1,digits = 2)->roundNum1
+```
+
+```{r}
+b<-"你好"
+bVector<-c("你好","How are you?")
+```
+```{r}
+b3<-'"你好"'
+b4<-'"你好"'
+```
+
+```{r}
+x <- 10
+class(x) # "numeric"
+oldClass(x) # NULL
+inherits(x, "a") #FALSE
+class(x) <- c("a", "b")
+inherits(x,"a") #TRUE
+inherits(x, "a", TRUE) # 1
+inherits(x, c("a", "b", "c"), TRUE) # 1 2 0
+
+class( quote(pi) )           # "name"
+## regular calls
+class( quote(sin(pi*x)) )    # "class"
+## special calls
+class( quote(x <- 1) )       # "<-"
+class( quote((1 < 2)) )      # "("
+class( quote( if(8<3) pi ) ) # "if"
+
+```
+
+```{r}
+round(2.3875,digits=2)
+```
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+library(dplyr)
+library(magrittr)
+student %<>% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))
+```
+```{r}
+student$出生地
+  
+```
+
+```{r}
+as.factor(student$出生地) -> student$出生地
+```
+
+```{r}
+factor(student$身高級距,
+       levels=c("(0,150]","(150,155]", "(155,160]", "(160,165]" ,"(165,170]", "(170,175]" ,"(175,180]" ,"(180,185]", "(185,200]"),
+       ordered=TRUE) -> student$身高級距
+```
+
+```{r}
+a<-"2017-01-31"
+```
+
+```{r}
+library(dplyr)
+library(lubridate)
+a <- ymd("2017-01-31") 
+b <- ymd_hms("2017-01-31 20:11:59")
+```
+
+```{r}
+a <- ymd("2017/01/31") 
+b <- ymd_hms("2017-01-31 2:53:00pm")
+```
+

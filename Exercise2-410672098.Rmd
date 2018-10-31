@@ -1,0 +1,69 @@
+---
+title: "練習2"
+date: "2018-10-13"
+output: html_document
+params:
+  studentID: "410672098"
+  studentName: "周婕汝"
+---
+存檔時，請用你的學號當延伸檔名。例如：若你的學號為41078392，則請`File->Save As...`存成Exercise2-41078392.Rmd。
+
+## 1
+引入「愛評網」三峽店家資料，請由`均消`變數中的文字取出數字部份，並轉成numeric class（要注意金錢千位數會有逗號，可用`stringr::str_replace()`把`","`換成`""`）。
+
+```{r}
+library(readr)
+iPeenData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/iPeenData.csv")
+```
+
+```{r ans1}
+a<-rep("",nrow(iPeenData))
+for (i in 1:nrow(iPeenData)){
+  iPeenData[i,2]<-substr(iPeenData[i,2],14,nchar(iPeenData[i,2])-8)
+  iPeenData[i,2]<-gsub(",","",iPeenData[i,2])
+  a[i]<-iPeenData[i,2]
+}
+a<-as.numeric(a)
+iPeenData[,2]<-a
+str(iPeenData[,2])
+head(iPeenData[,2])
+```
+
+## 2 
+引入學生播客競賽投票記錄。
+
+```{r}
+library(readr)
+filmVotingData <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/%E7%AC%AC%E4%B8%89%E5%B1%86%E7%B6%93%E6%BF%9F%E6%92%AD%E5%AE%A2%E7%AB%B6%E8%B3%BD%E5%8F%83%E8%B3%BD%E4%BD%9C%E5%93%81%E6%8A%95%E7%A5%A8%E7%B5%90%E6%9E%9C%E6%A8%A3%E6%9C%AC%20-%20Sheet1.csv")
+```
+
+2.1 將`filmVotingData$Timestamp`透過`lubridate::mdy_hms()`轉成POSIXct Date/Time class。
+
+```{r ans21}
+library(lubridate)
+x<-mdy_hms(filmVotingData$Timestamp)
+head(x)
+```
+
+2.2 由於原始資料的時區為UTC，請透過`lubridate::with_tz()`將時區設為"Asia/Taipei"。
+
+```{r ans22}
+x<-with_tz(x,tz="Asia/Taipei")
+head(x)
+```
+
+2.3 由Timestamp透過`lubridate::hour()`取出學生上網填表的小時值並存在新的變數`filmVotingData$hour`。  
+
+```{r ans23}
+filmVotingData[,4]=array(rep(""),nrow(filmVotingData))
+colnames(filmVotingData)<-c("Timestamp","出生西元年月日（驗證本人用）","請選擇你最喜歡的影片二部","hour")
+filmVotingData[,4]<-hour(x)
+head(filmVotingData[,4])
+```
+
+2.4 使用`table()`統計學生最活躍的填表時間。
+
+```{r ans24}
+table(filmVotingData$hour)
+```
+

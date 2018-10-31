@@ -1,0 +1,45 @@
+---
+title: "2018-10-08"
+output: html_notebook
+---
+```{r}
+str(2L)
+a<-c(2L, 'a', 3.0, 4)
+str(a)
+```
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+head(student,n = 10L)
+```
+
+```{r}
+gender <- c("男性", "男性", "女性", "男性", "女性", "男性")
+gender <- factor(gender,levels = c("男性","女性"),lables=c("Male","Female"))
+gender
+
+```
+```{r}
+library(readr)
+library(stringr)
+library(lubridate)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Year <- TyphoonData$年份
+
+Year <- as.integer(Year)-1911
+Year <- as.character(Year)
+Year <- str_c("民國",Year,"年")
+Year
+```
+```{r}
+library(readr)
+library(stringr)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Time <- TyphoonData$發布警報時間
+head(Time)
+Time <- str_sub(Time,start = 6,end = 7)
+Time
+table(Time)
+```
+
+

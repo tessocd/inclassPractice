@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
+=======
+.httr-oauth
+>>>>>>> 85eed029da15dd102db88b27a2a6ade37e168abe
