@@ -2,3 +2,22 @@
 title: "2018-10-31"
 output: html_notebook
 ---
+```{r}
+library(readr)
+student <- read_csv("https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv")
+library(dplyr)
+library(magrittr)
+student %<>% mutate(
+  身高級距=cut(身高,c(0,150,155,160,165,170,175,180,185,200)))
+```
+
+```{r}
+levels(student$身高級距) <- c("小個子","小個子","小個子","小個子","小個子","中等個子","中等個子","高個子","高個子")
+levels(student$身高級距)
+student$身高級距
+```
+```{r}
+gsSurvey<-gs_key("1mC9bnxj11NCNoOCw0Vmn4nxERbHtLjeGo9v9C9b2GDE")  #download sheet information as an object
+classSurvey<-gs_read(gsSurvey,ws=1) #access the 1st worksheet
+```
+

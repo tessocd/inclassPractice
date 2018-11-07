@@ -19,14 +19,17 @@ classData<-gs_read(gsLMSHabit,ws="公告與練習") #access the 1st worksheet
 變數「公-10-06」為1代表有看公告，請將classData$`公-10-06`改成factor類型且有看公告的人，他的觀察值為"有看公告"；沒看公告的觀察值為"沒看公告"。
 
 ```{r ans11}
-classData$`公-10-06`
+factor(classData$`公-10-06`)
+str(classData$`公-10-06`)
+classData$`公-10-06`<-gsub("1", replacement = "有看公告", classData$`公-10-06`)
+classData$`公-10-06`<-gsub("0", replacement = "沒看公告", classData$`公-10-06`)
 ```
 
 ### 1.2 
 選出"有看公告"的classData樣本。
 
 ```{r ans12}
-
+see<-classData[classData$`公-10-06`=="有看公告",]
 ```
 
 ### 1.3
@@ -35,13 +38,19 @@ classData$`公-10-06`
 在「有看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans13}
+a<-table(see$`練2018-10-17-1`=="1")
+a[2]/sum(a)
 ```
 
 ### 1.4
 在「沒看公告」的人裡，有多少比例在2018-10-17有commit-push記錄（即值為1）。
 
 ```{r ans14}
+nosee<-classData[classData$`公-10-06`=="沒看公告",]
+a<-table(nosee$`練2018-10-17-1`=="1")
+a[2]/sum(a)
 ```
+
 
 ## 2 作業繳交時間
 
@@ -55,29 +64,38 @@ hwData<-gs_read(gsLMSHabit,ws="作業上傳")
 ### 2.1
 資料的Timestamp為台灣時間，請將Timestamp變數設定成為Date/Time類型（即POSIXct)且時區是"Asia/Taipei"。（hint: `lubridate::mdy_hms()`）
 ```{r ans21}
-`lubridate::mdy_hms()`
+library(lubridate)
+hwData$Timestamp<-mdy_hms(hwData$Timestamp,tz="Asia/Taipei")
 ```
 
 ### 2.2
 作業繳交期限是"2018-10-24 00:00:00"，請建立一個Date/Time物件名為`deadline`，其值為繳交期限。
 
 ```{r ans22}
+hwData[,3]=array(rep(""),nrow(hwData))
+colnames(hwData)<-c("Timestamp","作業代碼","deadline")
+hwData$deadline<-as.POSIXct("2018-10-24 00:00:00")
 ```
 
 ### 2.3
-將`deadline`減去`hwData$Timestap`你會得到一個向量物件，其class為difftime。它的值為兩個Date/Time差了多少秒,但這並不容易理解。使用`difftime()`算出每個作業交件提早了多少**天**, 並存在`hwData$early`裡。
-
+將`deadline`減去`hwData$Timestap`你會得到一個向量物件，其class為difftime。它的值為兩個Date/Time差了多少秒,但這並不容易理解。使用`difftime()`算出每個作業交件提早了多少**天**, 並存在``裡。
+hwData$early
 ```{r ans23}
+hwData[,4]=array(rep(""),nrow(hwData))
+colnames(hwData)<-c("Timestamp","作業代碼","deadline","early")
+hwData$early<-difftime(hwData$deadline,hwData$Timestamp,units = "days")
 ```
 
 ### 2.4
 利用`round()`將early變數的天數四捨五入到整數。
 
 ```{r ans24}
+hwData$early<-round(hwData$early)
 ```
 
 ### 2.5
 作業1（即作業代碼為"hw1"）準時交的人中，他們的提早天數分佈如何？請使用`table()`呈現。
 
 ```{r ans25}
+table(hwData$early)
 ```

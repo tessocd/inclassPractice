@@ -1,0 +1,35 @@
+---
+title: "2018-11-07"
+output: html_notebook
+---
+```{r}
+library(readr)
+collegeData <- read_csv("https://quality.data.gov.tw/dq_download_csv.php?nid=6231&md5_url=dda8fca407131483c1d8cbf3d61cf793")
+```
+
+```{r}
+library(dplyr)
+mutate(
+  collegeData,
+  學校代碼=as.factor(學校代碼),
+  學校名稱=as.factor(學校名稱)
+  ) -> collegeData2
+```
+
+```{r}
+collegeData %>% 
+  mutate(
+    `日間∕進修別`=as.factor(`日間∕進修別`),
+    等級別=as.factor(等級別),
+    一年級男生=as.numeric(一年級男生),
+    一年級女生=as.numeric(一年級女生)
+  ) -> collegeData3
+```
+
+```{r}
+library(stringr)
+college1stYearData %>%
+  mutate_all(funs(parse_number(.,locale=cl))) ->
+  college1stYearDataNumeric
+```
+
