@@ -1,0 +1,102 @@
+---
+title: "2018-12-05"
+output: html_notebook
+---
+```{r}
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/library100_102.csv")
+```
+```{r}
+ymd_hms(libraryData$借閱時間,tz="Asia/Taipei") -> libraryData$借閱時間
+as.factor(libraryData$書籍類別) -> libraryData$書籍類別
+as.factor(libraryData$書籍館藏地) -> libraryData$書籍館藏地
+```
+
+```{r}
+max(libraryData$讀者借閱冊數) -> maxNumber
+min(libraryData$讀者借閱冊數) -> minNumber
+paste0("最大值：",maxNumber,"最小值：",minNumber)
+
+max(libraryData$入學年) -> maxNumber
+min(libraryData$入學年) -> minNumber
+paste0("最大值：",maxNumber,"最小值：",minNumber)
+
+max(libraryData$書籍上架年月) -> maxNumber
+min(libraryData$書籍上架年月) -> minNumber
+paste0("最大值：",maxNumber,"最小值：",minNumber)
+```
+
+```{r}
+#將重複多次的步驟寫成function
+#minMaxFun和x可自行命名
+
+minMaxFun <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+}
+minMaxFun(libraryData$讀者借閱冊數)
+
+minMaxFun(libraryData$入學年)
+
+minMaxFun(libraryData$書籍上架年月)
+```
+```{r}
+minMaxFun2 <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber) -> result
+  return(result)
+}
+```
+
+```{r}
+minMaxFun3 <- function(x){
+  max(x)-> maxNumber
+  min(x)-> minNumber
+  paste0("最大值： ",maxNumber, " 最小值： ",minNumber)
+  return(maxNumber)
+}
+minMaxFun3(libraryData$讀者借閱冊數)
+```
+```{r}
+not_numeric <- function(x){
+  !is.numeric(x)
+  }
+```
+
+
+##找出屬於"人文學院"的子樣本
+```{r}
+(libraryData$學院=="人文學院") -> logIndex
+libraryData[logIndex,] -> subsample
+subsample
+```
+
+```{r}
+findMyCollege <-function(x){
+  (libraryData$學院==x) -> logIndex
+  libraryData[logIndex,] -> subsample
+  return(subsample)
+}
+findMyCollege("人文學院")
+```
+
+```{r}
+libraryData %>%
+  select(讀者借閱冊數,書籍出版日期) %>%
+  summarise(
+    讀者平均借閱冊數=mean(讀者借閱冊數),
+    最小書籍出版日期=min(書籍出版日期,na.rm = T),
+    最大書籍出版日期=max(書籍出版日期,na.rm = T)
+  )
+```
+
