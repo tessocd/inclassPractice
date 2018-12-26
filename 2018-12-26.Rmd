@@ -1,0 +1,61 @@
+---
+title: "2018-12-26"
+output: html_notebook
+---
+```{r}
+library(readr)
+transcriptData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcript100_102.csv",
+                  col_types = cols(
+                    學期成績="n"
+                  ))
+
+totalCredits<-function(x){
+  transcriptData[transcriptData$學號==x,]->subsample 
+  subsample %>%
+    mutate(
+      及格=(學期成績>=60)
+    ) %>%
+    summarise(
+      學號=學號[1],
+      總修習學分數=sum(學分數),
+      總實得學分數=sum(學分數[及格])
+    )  
+}
+```
+
+```{r}
+library(dplyr)
+transcriptData %>%
+subsample$學號 %>% unique -> 符合條件學號
+```
+
+```{r}
+creditResults<-vector("list",length(符合條件學號))
+```
+
+```{r}
+for(i in seq_along(符合條件學號)){
+  creditResults[[i]] <- totalCredits(符合條件學號[i])
+}
+```
+```{r}
+library(readr)
+library(tidyr)
+libraryData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/libraryData2.csv")
+libraryData %>%
+  group_by(學院) %>%
+  nest(.key="各院借閱資料") ->
+  libraryDataNested
+```
+```{r}
+df <- data.frame(
+  x = 1:3,
+  y = c("a", "d,e,f", "g,h"),
+  z = c("A","A","B"),
+  stringsAsFactors = F
+)
+df %>% 
+  group_by(z) %>%
+  nest -> dfNested
+```
+
